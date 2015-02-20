@@ -5,9 +5,9 @@ package unairlines
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(AdminController)
-@Mock(Admin)
-class AdminControllerSpec extends Specification {
+@TestFor(TicketController)
+@Mock(Ticket)
+class TicketControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -21,8 +21,8 @@ class AdminControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.adminInstanceList
-            model.adminInstanceCount == 0
+            !model.ticketInstanceList
+            model.ticketInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -30,7 +30,7 @@ class AdminControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.adminInstance!= null
+            model.ticketInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
@@ -38,25 +38,25 @@ class AdminControllerSpec extends Specification {
         when:"The save action is executed with an invalid instance"
             request.contentType = FORM_CONTENT_TYPE
             request.method = 'POST'
-            def admin = new Admin()
-            admin.validate()
-            controller.save(admin)
+            def ticket = new Ticket()
+            ticket.validate()
+            controller.save(ticket)
 
         then:"The create view is rendered again with the correct model"
-            model.adminInstance!= null
+            model.ticketInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            admin = new Admin(params)
+            ticket = new Ticket(params)
 
-            controller.save(admin)
+            controller.save(ticket)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/admin/show/1'
+            response.redirectedUrl == '/ticket/show/1'
             controller.flash.message != null
-            Admin.count() == 1
+            Ticket.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -68,11 +68,11 @@ class AdminControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def admin = new Admin(params)
-            controller.show(admin)
+            def ticket = new Ticket(params)
+            controller.show(ticket)
 
         then:"A model is populated containing the domain instance"
-            model.adminInstance == admin
+            model.ticketInstance == ticket
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -84,11 +84,11 @@ class AdminControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def admin = new Admin(params)
-            controller.edit(admin)
+            def ticket = new Ticket(params)
+            controller.edit(ticket)
 
         then:"A model is populated containing the domain instance"
-            model.adminInstance == admin
+            model.ticketInstance == ticket
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -98,28 +98,28 @@ class AdminControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/admin/index'
+            response.redirectedUrl == '/ticket/index'
             flash.message != null
 
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def admin = new Admin()
-            admin.validate()
-            controller.update(admin)
+            def ticket = new Ticket()
+            ticket.validate()
+            controller.update(ticket)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.adminInstance == admin
+            model.ticketInstance == ticket
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            admin = new Admin(params).save(flush: true)
-            controller.update(admin)
+            ticket = new Ticket(params).save(flush: true)
+            controller.update(ticket)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/admin/show/$admin.id"
+            response.redirectedUrl == "/ticket/show/$ticket.id"
             flash.message != null
     }
 
@@ -130,23 +130,23 @@ class AdminControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/admin/index'
+            response.redirectedUrl == '/ticket/index'
             flash.message != null
 
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def admin = new Admin(params).save(flush: true)
+            def ticket = new Ticket(params).save(flush: true)
 
         then:"It exists"
-            Admin.count() == 1
+            Ticket.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(admin)
+            controller.delete(ticket)
 
         then:"The instance is deleted"
-            Admin.count() == 0
-            response.redirectedUrl == '/admin/index'
+            Ticket.count() == 0
+            response.redirectedUrl == '/ticket/index'
             flash.message != null
     }
 }
