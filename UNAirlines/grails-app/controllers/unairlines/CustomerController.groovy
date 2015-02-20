@@ -1,7 +1,5 @@
 package unairlines
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -9,6 +7,18 @@ import grails.transaction.Transactional
 class CustomerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    
+    def doLogin = {
+        def logged = Customer.findWhere(email:params['email'],
+            password:params['password'])
+        session.logged = logged
+        if (logged) {
+            session.isAdmin = false
+            redirect(controller:'Customer',action:'index')
+        }
+        else 
+            redirect(controller:'Admin',action:'doLogin')
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
