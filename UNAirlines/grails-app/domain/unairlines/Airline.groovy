@@ -2,7 +2,7 @@ package unairlines
 
 class Airline {
     
-    String name;
+    String name
     String phone
     String address
     
