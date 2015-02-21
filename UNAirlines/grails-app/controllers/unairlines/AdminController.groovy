@@ -10,13 +10,19 @@ class AdminController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     
+    def login = {
+        render(view:'login')
+    }
+    
     def doLogin = {
-        def logged = Admin.findWhere(email:params['email'],
-            password:params['password'])
-        session.logged = logged
-        if (logged) {
+        
+        def logged = Admin.findWhere(email:params['email'],password:params['password'])
+      
+        if (logged) 
+        {
+            session.user = logged
             session.isAdmin = true
-            redirect(controller:'Admin',action:'index')
+            redirect(action:'show', id: logged.id)
         }
         else 
             render('Error de credenciales')

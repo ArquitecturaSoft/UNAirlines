@@ -10,6 +10,34 @@ class PersonController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def login = {
+        render(view:'login')
+    }
+    
+    def doLogin = {
+        def user = Person.findWhere(email:params['email'], password:params['password'])
+	
+	if (user) {
+            
+            session.user = user
+            session.nickname = params['email']
+            
+            if (user.class == Customer.class) {
+                flash.message = "Bienvenido "+user.name+", Esta es tu info"
+                redirect(controller:'Customer', action:'show' , id: user.id)
+            }
+            if (user.class == Admin.class)
+            {
+                flash.message = "Esta cuenta es de administrador"
+                redirect(url:"/admin/login")
+            }
+        }    
+        else {
+            flash.message = "E-mail o clave incorrecta o no existe usuario"
+            redirect(controller:'Customer', action:'create')
+        }
+    }
+    
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Person.list(params), model:[personInstanceCount: Person.count()]

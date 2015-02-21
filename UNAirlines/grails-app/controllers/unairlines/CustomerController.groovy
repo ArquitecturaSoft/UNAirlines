@@ -8,7 +8,7 @@ class CustomerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     
-    def doLogin = {
+    /*def doLogin = {
         def logged = Customer.findWhere(email:params['email'],
             password:params['password'])
         session.logged = logged
@@ -18,7 +18,7 @@ class CustomerController {
         }
         else 
             redirect(controller:'Admin',action:'doLogin')
-    }
+    }*/
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
