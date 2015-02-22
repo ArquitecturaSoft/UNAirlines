@@ -28,6 +28,7 @@ class PersonController {
             if (user.class == Admin.class)
             {
                 flash.message = "Esta cuenta es de administrador"
+                session.invalidate()
                 redirect(url:"/admin/login")
             }
         }    
@@ -37,6 +38,11 @@ class PersonController {
         }
     }
     
+    def logout = {
+		session.invalidate()
+		redirect(url:"/")
+	}
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Person.list(params), model:[personInstanceCount: Person.count()]

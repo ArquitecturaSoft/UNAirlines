@@ -2,10 +2,6 @@
 
 <section id="contact-page">
         <div class="container">
-            <div class="center">        
-                <h2>Formulario de Registro</h2>
-                <p class="lead">Por favor, diligencia la siguiente información.</p>
-            </div> 
             <div class="row contact-wrap"> 
                 <div class="status alert alert-success" style="display: none"></div>
                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">

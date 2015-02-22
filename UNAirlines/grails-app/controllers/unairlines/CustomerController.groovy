@@ -50,9 +50,10 @@ class CustomerController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'customer.label', default: 'Customer'), customerInstance.id])
-                redirect customerInstance
+                respond customerInstance
+                redirect(uri:"/success")
             }
-            '*' { respond customerInstance, [status: CREATED] }
+            
         }
     }
 

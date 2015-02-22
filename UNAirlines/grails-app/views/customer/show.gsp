@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-sm-10 blog-content">
                                 <h2><a>Instrucciones de Uso de la Aplicacion</a></h2>
-                                <h3>Hola ${flash.message}. Te damos la bienvenida. Dentro de nuestra aplicación podras realizar alguna de las siguientes acciones:</h3>
+                                <h3>Hola. Te damos la bienvenida. Dentro de nuestra aplicación podras realizar alguna de las siguientes acciones:</h3>
                                 <h4><a>Consultar Informacion de Aerolineas: </a>Si oprimes el boton "Aerolinas", accederás a toda la informacion de contacto de las aerolineas.</h4>
                                 <br>
                                 <h4><a>Buscar Vuelos: </a>Dentro de nuestra aplicacion podras buscar toda la informacion necesaria del vuelo que desees consultar. Para ello, presiona el boton "Buscar".</h4>

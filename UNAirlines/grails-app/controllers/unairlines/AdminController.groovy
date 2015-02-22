@@ -22,12 +22,20 @@ class AdminController {
         {
             session.user = logged
             session.isAdmin = true
-            redirect(action:'show', id: logged.id)
+            session.nickname = params['email']
+            redirect(action:'show',id:logged.id)
         }
-        else 
+        else
+            {
             flash.message="Error de credenciales"
             redirect(action:"login")
+            }
     }
+    
+    def logout = {
+		session.invalidate()
+		redirect(url:"/loginAdmin")
+	}
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

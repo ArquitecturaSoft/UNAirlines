@@ -3,18 +3,73 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+            <asset:stylesheet src="bootstrap.min.css" />
+            <asset:stylesheet src="font-awesome.min.css"/>
+            <asset:stylesheet src="animate.min.css"/>
+            <asset:stylesheet src="prettyPhoto.css"/>
+            <asset:stylesheet src="main.css"/>
+            <asset:stylesheet src="responsive.css"/>
+
+            <asset:javascript src="jquery.js" />
+            <asset:javascript src="bootstrap.min.js" />
+            <asset:javascript src="jquery.prettyPhoto.js" />
+            <asset:javascript src="jquery.isotope.min.js" />
+            <asset:javascript src="main.js" />
+            <asset:javascript src="wow.min.js" />
+            
+            
 		<g:set var="entityName" value="${message(code: 'flight.label', default: 'Flight')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-flight" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+                <header id="header">
+        <g:render template="/common/menuA" />
+    </header>
+    <section id="content" class="shortcode-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-17">
+                    <h2>Panel de Administrador</h2> 
+                    <div class="tab-wrap">
+                        <div class="media">
+                            <g:render template="/common/leftPanel" />
+                            <div class="parrent media-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="tab1">
+                                        hola1
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        hola2
+                                    </div>
+                                    <div class="tab-pane" id="tab3">
+                                        hola3
+                                    </div>
+                                    <div class="tab-pane" id="tab4">
+                                        hola4
+                                    </div>
+                                    <div class="tab-pane" id="tab5">
+                                        hol5
+                                    </div>
+                                    <div class="tab-pane" id="tab6">
+                                        hola6
+                                    </div>
+                                </div> <!--/.tab-content-->  
+                            </div> <!--/.media-body--> 
+                        </div> <!--/.media-->     
+                    </div><!--/.tab-wrap-->               
+                </div><!--/.col-sm-6-->
+            </div>
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#content-->
+
+
+
+
+
+
+ <a href="#list-flight" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		
 		<div id="list-flight" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">

@@ -22,7 +22,9 @@
                             <button type="submit" class="btn btn-primary btn-lg">Aerolineas</button>
                         </li>
                         <li>
-                            <button type="submit" class="btn btn-primary btn-lg">Cerrar Sesion</button>
+                            <g:form controller="Person" action="logout">
+                                <button type="submit" class="btn btn-primary btn-lg">Cerrar Sesion</button>
+                            </g:form>
                         </li> 
                     </ul>
                 </div>

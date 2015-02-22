@@ -66,6 +66,10 @@
         </g:hasErrors>
         <g:form url="[resource:customerInstance, action:'save']" >
             <fieldset class="form">
+                <div class="center">        
+                    <h2>Formulario de Registro</h2>
+                    <p class="lead">Por favor, diligencia la siguiente información.</p>
+                </div> 
                 <g:render template="form"/>
             </fieldset>		             
             <center>
@@ -76,11 +80,11 @@
                         <div class="status alert alert-success" style="display: none"></div>
                         <div class="col-sm-5 col-sm-offset-1">                   
                             <div class="form-group">
-                                 <button type="submit" name="create" class="btn btn-primary btn-lg" required="required"value="${message(code: 'default.button.create.label', default: 'Create')}" >Sign-Up!</button>
+                                <button type="submit" name="create" class="btn btn-primary btn-lg" required="required"value="${message(code: 'default.button.create.label', default: 'Create')}" >Sign-Up!</button>
                             </div>
                         </div>
                         </section></center>
-                    </g:form>
+                </g:form>
                 </div>
                 </body>
                 </html>
