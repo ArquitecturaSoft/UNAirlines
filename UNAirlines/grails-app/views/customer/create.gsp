@@ -36,13 +36,21 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <!--<li class="active"><a href="index.html">Home</a></li>-->
-                        <li class="active"><a href="about-us.html">Registrarse</a></li>
-                        <li class="active"><a href="services.html">iniciar Sesion</a></li>                       
+
+                        <li>                    
+                            <g:form controller="Customer" action="create" method="post">
+                                <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                            </g:form>
+                        </li>
+                        <li>
+                            <g:form controller="Person" action="login" method="post">
+                                <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesi&oacute;n</button>
+                            </g:form>
+                        </li>                       
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-
     </header><!--/header-->
     <div id="create-customer" class="content scaffold-create" role="main">
         <h1><g:message code="default.create.label" args="[entityName]" /></h1>

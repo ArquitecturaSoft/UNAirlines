@@ -11,7 +11,7 @@ class AdminController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     
     def login = {
-        render(view:'login')
+        
     }
     
     def doLogin = {
@@ -25,7 +25,8 @@ class AdminController {
             redirect(action:'show', id: logged.id)
         }
         else 
-            render('Error de credenciales')
+            flash.message="Error de credenciales"
+            redirect(action:"login")
     }
 
     def index(Integer max) {

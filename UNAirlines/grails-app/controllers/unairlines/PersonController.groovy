@@ -11,7 +11,6 @@ class PersonController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def login = {
-        render(view:'login')
     }
     
     def doLogin = {
@@ -23,7 +22,7 @@ class PersonController {
             session.nickname = params['email']
             
             if (user.class == Customer.class) {
-                flash.message = "Bienvenido "+user.name+", Esta es tu info"
+                flash.message = user.name
                 redirect(controller:'Customer', action:'show' , id: user.id)
             }
             if (user.class == Admin.class)
@@ -34,7 +33,7 @@ class PersonController {
         }    
         else {
             flash.message = "E-mail o clave incorrecta o no existe usuario"
-            redirect(controller:'Customer', action:'create')
+            redirect(action:"login")
         }
     }
     
