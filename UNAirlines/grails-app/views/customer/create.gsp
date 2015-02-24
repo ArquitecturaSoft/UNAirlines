@@ -20,7 +20,7 @@
 
 <body>
 
-    <header id="header">
+    <header id="hewader">
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -53,7 +53,7 @@
         </nav><!--/nav-->
     </header><!--/header-->
     <div id="create-customer" class="content scaffold-create" role="main">
-        <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+        <br><br>
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
         </g:if>
