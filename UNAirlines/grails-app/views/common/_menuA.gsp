@@ -18,7 +18,7 @@
                             </g:form>
                         </li> 
                         <li>
-                            <g:form controller="Admin" action="logout">
+                            <g:form controller="Person" action="logout">
                                 <button type="submit" class="btn btn-primary btn-lg">Cerrar Sesion</button>
                             </g:form>
                         </li> 

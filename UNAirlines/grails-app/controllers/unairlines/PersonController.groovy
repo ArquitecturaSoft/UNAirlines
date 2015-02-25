@@ -40,7 +40,7 @@ class PersonController {
     
     def logout = {
 		session.invalidate()
-		redirect(url:"/")
+		redirect(action:"login");
 	}
 
     def index(Integer max) {
