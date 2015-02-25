@@ -1,76 +1,50 @@
 <%@ page import="unairlines.Flight" %>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'arrivalDate', 'error')} required">
-	<label for="arrivalDate">
-		<g:message code="flight.arrivalDate.label" default="Arrival Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="arrivalDate" precision="day"  value="${flightInstance?.arrivalDate}"  />
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'cost', 'error')} required">
-	<label for="cost">
-		<g:message code="flight.cost.label" default="Cost" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="cost" value="${fieldValue(bean: flightInstance, field: 'cost')}" required=""/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'departureDate', 'error')} required">
-	<label for="departureDate">
-		<g:message code="flight.departureDate.label" default="Departure Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="departureDate" precision="day"  value="${flightInstance?.departureDate}"  />
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'description', 'error')} required">
-	<label for="description">
-		<g:message code="flight.description.label" default="Description" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="description" required="" value="${flightInstance?.description}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'destination', 'error')} required">
-	<label for="destination">
-		<g:message code="flight.destination.label" default="Destination" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="destination" required="" value="${flightInstance?.destination}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'gate', 'error')} required">
-	<label for="gate">
-		<g:message code="flight.gate.label" default="Gate" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="gate" required="" value="${flightInstance?.gate}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'number', 'error')} required">
-	<label for="number">
-		<g:message code="flight.number.label" default="Number" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="number" required="" value="${flightInstance?.number}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'origin', 'error')} required">
-	<label for="origin">
-		<g:message code="flight.origin.label" default="Origin" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="origin" required="" value="${flightInstance?.origin}"/>
-
-</div>
-
+<section id="contact-page">
+        <div class="container">
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            
+                            <label>Fecha de Arribo*</label>
+                            <g:datePicker name="arrivalDate" precision="day"  value="${flightInstance?.arrivalDate}"  />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Precio *</label>
+                            <input type="text" name="cost" class="form-control" value="${fieldValue(bean: flightInstance, field: 'cost')}" required="" >
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de Partida*</label>
+                            <g:datePicker name="departureDate" precision="day"  value="${flightInstance?.departureDate}"  />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descripcion*</label>
+                            <input type="text" name="description" class="form-control" required="" value="${flightInstance?.description}">  
+                        </div>                        
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Destino*</label>                            
+                            <input type="text" name="destination" class="form-control" required="" value="${flightInstance?.destination}" >  
+                        </div>                        
+                        <div class="form-group"> 
+                            <label>Gate*</label>
+                            <input type="text" name="gate" required="" class="form-control" value="${flightInstance?.gate}">
+                        </div>   
+                        <div class="form-group"> 
+                            <label>Numero de Silla*</label>
+                            <input type="text" name="number" required="" class="form-control" value="${flightInstance?.number}">
+                        </div> 
+                        <div class="form-group"> 
+                            <label>Ciudad de Origen*</label>
+                            <input type="text" name="origin" required="" class="form-control" value="${flightInstance?.origin}">
+                        </div> 
+                    </div>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+    

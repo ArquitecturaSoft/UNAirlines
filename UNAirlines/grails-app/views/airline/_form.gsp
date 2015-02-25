@@ -1,31 +1,25 @@
 <%@ page import="unairlines.Airline" %>
-
-
-
-<div class="fieldcontain ${hasErrors(bean: airlineInstance, field: 'address', 'error')} required">
-	<label for="address">
-		<g:message code="airline.address.label" default="Address" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="address" required="" value="${airlineInstance?.address}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: airlineInstance, field: 'name', 'error')} required">
-	<label for="name">
-		<g:message code="airline.name.label" default="Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="name" required="" value="${airlineInstance?.name}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: airlineInstance, field: 'phone', 'error')} required">
-	<label for="phone">
-		<g:message code="airline.phone.label" default="Phone" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="phone" required="" value="${airlineInstance?.phone}"/>
-
-</div>
-
+<section id="contact-page">
+        <div class="container">
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Direccion*</label>
+                            <input type="text" name="address" class="form-control" required="" value="${airlineInstance?.address}">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre*</label>
+                            <input type="text" name="name" class="form-control"  required="" value="${airlineInstance?.name}">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefono*</label>
+                            <input type="text" name="phone" class="form-control" required="" value="${airlineInstance?.phone}" >  
+                        </div>                      
+                    </div>
+                   
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->

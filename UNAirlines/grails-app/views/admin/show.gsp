@@ -39,11 +39,22 @@
                                                 <img class="img-responsive" src="${resource(dir: 'images', file: 'tab1.png')}">
                                             </div>
                                             <div class="media-body">
-                                                Con esta opcion Podras gestionar  (Crear, Actualizar, Eliminar, Visualizar) los vuelos que podran Visualizar nuestros clientes.<br><br>
-                                        <center>Por favor, Elige una Opcion:
-                                        <br>
-                                        <a href="" class="btn btn-primary">Ver Lista</a>
-                                        <a href="" class="btn btn-primary">Crear</a>
+                                                Con esta opcion Podras gestionar  (Crear, Actualizar, Eliminar, Visualizar) las aerolineas que ofrecen nuestros servicios y que podran consultar nuestros clientes.<br><br>
+                                                Por favor, Elige una Opcion:
+                                                    <br>
+
+                                                    <center><ul class="nav navbar-nav"> 
+                                                        <li>
+                                                            <g:form controller="airline" action="index">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Ver</button>
+                                                            </g:form>
+                                                        </li>
+                                                        <li>
+                                                            <g:form controller="Admin" action="show">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Crear</button>
+                                                            </g:form>
+                                                        </li>
+                                                    </ul></center>
                                             </div>
                                         </div>
                                     </div>
@@ -51,31 +62,39 @@
                                     <div class="tab-pane" id="tab2">
                                         <div class="media">
                                             <div class="pull-left">
-                                                
+                                                <img class="img-responsive" src="${resource(dir: 'images', file: 'tab2.png')}">
                                             </div>
                                             <div class="media-body">
-                                                Descripcion Opcion2 <br><br>
-                                        <center>Por favor, Elige una Opcion:
-                                        <br>
-                                        <a href="" class="btn btn-primary">Ver Lista</a>
-                                        <a href="" class="btn btn-primary">Crear</a>
+                                                Con esta opcion Podras gestionar  (Crear, Actualizar, Eliminar, Visualizar) los vuelos que podran Visualizar nuestros clientes.<br><br>
+                                                <center>Por favor, Elige una Opcion:
+                                                    <br>
+                                                    <g:form controller="flight" action="index">
+                                                        <button type="submit" class="btn btn-primary btn-lg">Ver </button></li>
+                                                    </g:form>
+                                                    <g:form controller="flight" action="create">
+                                                        <button type="submit" class="btn btn-primary btn-lg">Crear</button></li>
+                                                    </g:form>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab3">
-                                        <h4>Descripcion3</h4>
-                                                <p>Descripcion3</p>
-                                    </div>
-
-                                    <div class="tab-pane" id="tab4">
-                                        <h4>Descripcion4</h4>
-                                        <p>Descripcion4</p>
-                                    </div>
-
-                                    <div class="tab-pane" id="tab5">
-                                        <h4>Descripcion5</h4>
-                                        <p>Descripcion5</p>
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="img-responsive" src="${resource(dir: 'images', file: 'tab3.png')}">
+                                            </div>
+                                            <div class="media-body">
+                                                Con esta opcion Podras gestionar  (Crear, Actualizar, Eliminar, Visualizar) las distintas categorias de servicios que ofrecen las aerolineas.<br><br>
+                                                <center>Por favor, Elige una Opcion:
+                                                    <br>
+                                                    <g:form controller="flightClass" action="index">
+                                                        <button type="submit" class="btn btn-primary btn-lg">Ver </button></li>
+                                                    </g:form>
+                                                    <g:form controller="flightClass" action="create">
+                                                        <button type="submit" class="btn btn-primary btn-lg">Crear</button></li>
+                                                    </g:form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div> <!--/.tab-content-->  
                             </div> <!--/.media-body--> 
