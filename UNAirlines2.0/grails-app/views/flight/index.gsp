@@ -24,6 +24,8 @@
 			<thead>
 					<tr>
 					
+						<th><g:message code="flight.airline.label" default="Airline" /></th>
+					
 						<g:sortableColumn property="arrivalDate" title="${message(code: 'flight.arrivalDate.label', default: 'Arrival Date')}" />
 					
 						<g:sortableColumn property="cost" title="${message(code: 'flight.cost.label', default: 'Cost')}" />
@@ -34,15 +36,15 @@
 					
 						<g:sortableColumn property="destination" title="${message(code: 'flight.destination.label', default: 'Destination')}" />
 					
-						<g:sortableColumn property="gate" title="${message(code: 'flight.gate.label', default: 'Gate')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${flightInstanceList}" status="i" var="flightInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "arrivalDate")}</g:link></td>
+						<td><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "airline")}</g:link></td>
+					
+						<td><g:formatDate date="${flightInstance.arrivalDate}" /></td>
 					
 						<td>${fieldValue(bean: flightInstance, field: "cost")}</td>
 					
@@ -51,8 +53,6 @@
 						<td>${fieldValue(bean: flightInstance, field: "description")}</td>
 					
 						<td>${fieldValue(bean: flightInstance, field: "destination")}</td>
-					
-						<td>${fieldValue(bean: flightInstance, field: "gate")}</td>
 					
 					</tr>
 				</g:each>

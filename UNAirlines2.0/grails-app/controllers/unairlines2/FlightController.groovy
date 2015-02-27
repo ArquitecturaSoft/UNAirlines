@@ -9,6 +9,28 @@ import grails.transaction.Transactional
 class FlightController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    
+    def doSearch() {
+        
+        def flightsList = Flight.findAllByOriginAndDestinationAndDepartureDate(
+            params['originCity'], params['destinationCity'], params['departureDate'] )
+
+        render (view:"listSearch", model:[flightsList: flightsList])
+    }
+    
+    def listSearch() {
+    }
+
+    def mainSearch() {
+        def originCities = (Flight.where {}.projections { distinct 'origin' }).list()
+        def destinationCities = (Flight.where {}.projections { distinct 'destination' }).list()
+        render ( view:"mainSearch", model:[originCities: originCities, destinationCities: destinationCities])
+    }
+    
+    def showFlight(Flight flightInstance) {
+        double multiplier = flightInstance.airline.flightClasses.getAt(Integer.parseInt(params['category'])).multiplier
+        render (view:"showFlight", model:[flightInstance: flightInstance, multiplier: multiplier])
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

@@ -10,6 +10,7 @@ class Flight {
     String destination
     double cost
     static hasMany = [tickets: Ticket]
+    static belongsTo = [airline: Airline]
     
     static constains = {
         numberFlight (blank:false)

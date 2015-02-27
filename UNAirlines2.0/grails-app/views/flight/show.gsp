@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list flight">
 			
+				<g:if test="${flightInstance?.airline}">
+				<li class="fieldcontain">
+					<span id="airline-label" class="property-label"><g:message code="flight.airline.label" default="Airline" /></span>
+					
+						<span class="property-value" aria-labelledby="airline-label"><g:link controller="airline" action="show" id="${flightInstance?.airline?.id}">${flightInstance?.airline?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${flightInstance?.arrivalDate}">
 				<li class="fieldcontain">
 					<span id="arrivalDate-label" class="property-label"><g:message code="flight.arrivalDate.label" default="Arrival Date" /></span>

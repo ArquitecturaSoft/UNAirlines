@@ -2,6 +2,15 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'airline', 'error')} required">
+	<label for="airline">
+		<g:message code="flight.airline.label" default="Airline" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightInstance?.airline?.id}" class="many-to-one"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: flightInstance, field: 'arrivalDate', 'error')} required">
 	<label for="arrivalDate">
 		<g:message code="flight.arrivalDate.label" default="Arrival Date" />
