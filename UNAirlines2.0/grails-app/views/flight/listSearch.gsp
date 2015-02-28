@@ -43,45 +43,55 @@
 				<tbody>
 				<g:each in="${flightsList}" status="i" var="flightInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "arrivalDate")}</g:link></td>
-					
-						<td><g:formatDate date="${flightInstance.departureDate}" /></td>
-					
-						<td>${fieldValue(bean: flightInstance, field: "description")}</td>
-					
-						<td>${fieldValue(bean: flightInstance, field: "destination")}</td>
-                                                
-                                                <g:if test="${flightInstance.airline.flightClasses.size() > 0}">
+                                            <td><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "arrivalDate")}</g:link></td>
+
+                                            <td><g:formatDate date="${flightInstance.departureDate}" /></td>
+
+                                            <td>${fieldValue(bean: flightInstance, field: "description")}</td>
+
+                                            <td>${fieldValue(bean: flightInstance, field: "destination")}</td>
+                                            <g:set var='flag' value='true'/>
+                                            <g:each in="${flightInstance.airline.flightClasses.asList()}" status="j" var="categoryInstance">
+                                                <g:if test="${categoryInstance.type == "Economy"}">
                                                     <td>
-                                                        <g:link action="showFlight" id="${flightInstance.id}"  params="[category: 0]">
-                                                            ${flightInstance.cost * flightInstance.airline.flightClasses.getAt(0).multiplier}
+                                                        <g:link action="showFlight" id="${flightInstance.id}"  params="[category: 'Economy']">
+                                                            ${flightInstance.cost * categoryInstance.multiplier}
                                                         </g:link>
                                                     </td>
+                                                    <g:set var='flag' value='false'/>
                                                 </g:if>
-                                                <g:else>
-                                                    <td>N/A</td>
-                                                </g:else>
-                                                <g:if test="${flightInstance.airline.flightClasses.size() > 1}">
+                                            </g:each>
+                                            <g:if test="${flag == 'true'}">
+                                                <td>N/A</td>
+                                            </g:if>
+                                            <g:set var='flag' value='true'/>
+                                            <g:each in="${flightInstance.airline.flightClasses.asList()}" status="j" var="categoryInstance">
+                                                <g:if test="${categoryInstance.type == "Bussines"}">
                                                     <td>
-                                                        <g:link action="showFlight" id="${flightInstance.id}" params="[category: 1]">
-                                                            ${flightInstance.cost * flightInstance.airline.flightClasses.getAt(1).multiplier}
+                                                        <g:link action="showFlight" id="${flightInstance.id}" params="[category: 'Bussines']">
+                                                            ${flightInstance.cost * categoryInstance.multiplier}
                                                         </g:link>
                                                     </td>
+                                                    <g:set var='flag' value='false'/>
                                                 </g:if>
-                                                <g:else>
-                                                    <td>N/A</td>
-                                                </g:else>
-                                                <g:if test="${flightInstance.airline.flightClasses.size() > 2}">
+                                            </g:each>
+                                            <g:if test="${flag == 'true'}">
+                                                <td>N/A</td>
+                                            </g:if>
+                                            <g:set var='flag' value='true'/>
+                                            <g:each in="${flightInstance.airline.flightClasses.asList()}" status="j" var="categoryInstance">
+                                                <g:if test="${categoryInstance.type == "Bussines Premium"}">
                                                     <td>
-                                                        <g:link action="showFlight" id="${flightInstance.id}" params="[category: 2]">
-                                                            <td>${flightInstance.cost * flightInstance.airline.flightClasses.getAt(2).multiplier}</td>
+                                                        <g:link action="showFlight" id="${flightInstance.id}" params="[category: 'Bussines Premium']">
+                                                            <td>${flightInstance.cost * categoryInstance.multiplier}</td>
                                                         </g:link>
                                                     </td>
+                                                    <g:set var='flag' value='false'/>
                                                 </g:if>
-                                                <g:else>
-                                                    <td>N/A</td>
-                                                </g:else>
+                                            </g:each>
+                                            <g:if test="${flag == 'true'}">
+                                                <td>N/A</td>
+                                            </g:if>
 					</tr>
 				</g:each>
 				</tbody>

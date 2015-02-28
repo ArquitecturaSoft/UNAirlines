@@ -28,7 +28,10 @@ class FlightController {
     }
     
     def showFlight(Flight flightInstance) {
-        double multiplier = flightInstance.airline.flightClasses.getAt(Integer.parseInt(params['category'])).multiplier
+        double multiplier = 0.0
+        for ( category in flightInstance.airline.flightClasses.asList() )
+            if ( category.type == params['category'] )
+                multiplier = category.multiplier
         render (view:"showFlight", model:[flightInstance: flightInstance, multiplier: multiplier])
     }
 
