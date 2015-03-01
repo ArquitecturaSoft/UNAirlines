@@ -9,6 +9,32 @@ import grails.transaction.Transactional
 class AdminController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def login = {
+        
+    }
+    
+    def doLogin = {
+        
+        def logged = Admin.findWhere(email:params['email'],password:params['password'])
+      
+        if (logged) 
+        {
+            session.user = logged
+            session.isAdmin = true
+            session.nickname = params['email']
+            redirect(action:'show',id:logged.id)
+        }
+        else
+            {
+            flash.message="Error de credenciales"
+            redirect(action:"login")
+            }
+    }
+    
+    def logout = {
+		session.invalidate()
+		redirect(url:"/loginAdmin")
+	}
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

@@ -2,53 +2,59 @@
 <%@ page import="unairlines2.Airline" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'airline.label', default: 'Airline')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
+    <head>
+        <meta charset="utf-8">
+        <asset:stylesheet src="bootstrap.min.css" />
+        <asset:stylesheet src="font-awesome.min.css"/>
+        <asset:stylesheet src="animate.min.css"/>
+        <asset:stylesheet src="prettyPhoto.css"/>
+        <asset:stylesheet src="main.css"/>
+        <asset:stylesheet src="responsive.css"/>
+        <asset:stylesheet src="table.css" />
+        <asset:javascript src="jquery.js" />
+        <asset:javascript src="bootstrap.min.js" />
+        <asset:javascript src="jquery.prettyPhoto.js" />
+        <asset:javascript src="jquery.isotope.min.js" />
+        <asset:javascript src="main.js" />
+        <asset:javascript src="wow.min.js" />
+    <g:set var="entityName" value="${message(code: 'airline.label', default: 'Airline')}" />
+    <title><g:message code="default.list.label" args="[entityName]" /></title>
+    </head>
 	<body>
-		<a href="#list-airline" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-airline" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="address" title="${message(code: 'airline.address.label', default: 'Address')}" />
-					
-						<g:sortableColumn property="name" title="${message(code: 'airline.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="phone" title="${message(code: 'airline.phone.label', default: 'Phone')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${airlineInstanceList}" status="i" var="airlineInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${airlineInstance.id}">${fieldValue(bean: airlineInstance, field: "address")}</g:link></td>
-					
-						<td>${fieldValue(bean: airlineInstance, field: "name")}</td>
-					
-						<td>${fieldValue(bean: airlineInstance, field: "phone")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${airlineInstanceCount ?: 0}" />
-			</div>
-		</div>
-	</body>
-</html>
+            <header id="header">
+                <g:render template="/common/menuA" />
+            </header>
+            <div class="table-title">
+                <h3>Lista de Aerolineas</h3><br>
+            </div>
+            <center><table class="table-fill">
+                <thead>
+                    <tr>
+                        <th class="text-center">Direccion</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Telefono</th>
+
+                    </tr>
+                </thead>
+		<tbody class="table-hover">
+                    <g:each in="${airlineInstanceList}" status="i" var="airlineInstance">
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+
+                            <td class="text-center"><g:link action="show" id="${airlineInstance.id}">${fieldValue(bean: airlineInstance, field: "address")}</g:link></td>
+
+                            <td class="text-center">${fieldValue(bean: airlineInstance, field: "name")}</td>
+
+                            <td class="text-center">${fieldValue(bean: airlineInstance, field: "phone")}</td>
+
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
+        <br>
+        <g:form controller="airline" action="create">
+            <button type="submit" class="btn btn-primary btn-lg">Crear Aerolinea</button></li>
+        </g:form></center>        
+    <br>
+
+    </body>
+    </html>

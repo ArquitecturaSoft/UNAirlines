@@ -1,67 +1,43 @@
 <%@ page import="unairlines2.Customer" %>
-
-
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'name', 'error')} required">
-	<label for="name">
-		<g:message code="customer.name.label" default="Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="name" required="" value="${customerInstance?.name}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'surname', 'error')} required">
-	<label for="surname">
-		<g:message code="customer.surname.label" default="Surname" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="surname" required="" value="${customerInstance?.surname}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'email', 'error')} required">
-	<label for="email">
-		<g:message code="customer.email.label" default="Email" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="email" name="email" required="" value="${customerInstance?.email}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'password', 'error')} required">
-	<label for="password">
-		<g:message code="customer.password.label" default="Password" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="password" name="password" required="" value="${customerInstance?.password}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'address', 'error')} required">
-	<label for="address">
-		<g:message code="customer.address.label" default="Address" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="address" required="" value="${customerInstance?.address}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'phone', 'error')} required">
-	<label for="phone">
-		<g:message code="customer.phone.label" default="Phone" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="phone" required="" value="${customerInstance?.phone}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'tickets', 'error')} ">
-	<label for="tickets">
-		<g:message code="customer.tickets.label" default="Tickets" />
-		
-	</label>
-	<g:select name="tickets" from="${unairlines2.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${customerInstance?.tickets*.id}" class="many-to-many"/>
-
-</div>
-
+<section id="contact-page">
+        <div class="container">
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                       <div class="form-group">
+                            <label>Nombre *</label>
+                            <input type="text" name="name" class="form-control" required="" value="${customerInstance?.name}">
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido *</label>
+                            <input type="text" name="surname" class="form-control"  required="" value="${customerInstance?.surname}">
+                        </div>
+                        <div class="form-group">
+                            <label>Correo Electronico*</label>
+                            <input type="text" name="email" class="form-control" required="" value="${customerInstance?.email}" >  
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña*</label>
+                            <input type="password" name="password" class="form-control" required="" value="${customerInstance?.password}" >  
+                        </div>                        
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Direccion</label>
+                            
+                            <input type="text" name="address" class="form-control" required="" value="${customerInstance?.address}" >  
+                        </div>
+                        <div class="form-group">
+                            
+                            <label>Telefono*</label>
+                            <input type="text" name="phone" required="" class="form-control" value="${customerInstance?.phone}">
+                        </div>
+                        <div class="form-group">
+                            <label>Tiquetes</label>
+                            <g:select name="tickets" from="${unairlines2.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${customerInstance?.tickets*.id}" class="many-to-many"/>
+                        </div>
+                    </div>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->

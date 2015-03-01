@@ -1,76 +1,48 @@
 <%@ page import="unairlines2.Ticket" %>
 
+<section id="contact-page">
+        <div class="container">
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Codigo*</label>
+                            <input type="text" name="code" class="form-control" required="" value="${ticketInstance?.code}">
+                        </div>
+                        <div class="form-group">
+                            <label>Vuelo*</label>
+                            <g:select id="flight" name="flight.id" from="${unairlines2.Flight.list()}" optionKey="id" required="" value="${ticketInstance?.flight?.id}" class="many-to-one"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de Naciomiento del Pasajero *</label>
+                            <g:datePicker name="passengerBirthDate" precision="day"  value="${ticketInstance?.passengerBirthDate}"  />
+                        </div>
+                        <div class="form-group">
+                            <label>Id Pasajero*</label>
+                            <input type="text" name="passengerID" class="form-control" required="" value="${ticketInstance?.passengerID}" >  
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido Pasajero*</label>
+                            <input type="text" name="passengerLastName" class="form-control" required="" value="${ticketInstance?.passengerLastName}">  
+                        </div> 
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                                <label>Nombre Pasajero*</label>
+                                <input type="text" name="passengerName" class="form-control" required="" value="${ticketInstance?.passengerName}" >  
+                        </div>
+                        <div class="form-group">
+                            <label>Precio*</label>
+                            <input type="text" name="price" required="" class="form-control" value="${fieldValue(bean: ticketInstance, field: 'price')}">
+                        </div>
+                        <div class="form-group">
+                            <label>Silla*</label>
+                            <input type="number" name="seat" required="" class="form-control" value="${ticketInstance.seat}">
+                        </div> 
+                    </div>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
 
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'code', 'error')} required">
-	<label for="code">
-		<g:message code="ticket.code.label" default="Code" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="code" required="" value="${ticketInstance?.code}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'flight', 'error')} required">
-	<label for="flight">
-		<g:message code="ticket.flight.label" default="Flight" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="flight" name="flight.id" from="${unairlines2.Flight.list()}" optionKey="id" required="" value="${ticketInstance?.flight?.id}" class="many-to-one"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'passengerBirthDate', 'error')} required">
-	<label for="passengerBirthDate">
-		<g:message code="ticket.passengerBirthDate.label" default="Passenger Birth Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="passengerBirthDate" precision="day"  value="${ticketInstance?.passengerBirthDate}"  />
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'passengerID', 'error')} required">
-	<label for="passengerID">
-		<g:message code="ticket.passengerID.label" default="Passenger ID" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="passengerID" required="" value="${ticketInstance?.passengerID}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'passengerLastName', 'error')} required">
-	<label for="passengerLastName">
-		<g:message code="ticket.passengerLastName.label" default="Passenger Last Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="passengerLastName" required="" value="${ticketInstance?.passengerLastName}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'passengerName', 'error')} required">
-	<label for="passengerName">
-		<g:message code="ticket.passengerName.label" default="Passenger Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="passengerName" required="" value="${ticketInstance?.passengerName}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'price', 'error')} required">
-	<label for="price">
-		<g:message code="ticket.price.label" default="Price" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="price" value="${fieldValue(bean: ticketInstance, field: 'price')}" required=""/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'seat', 'error')} required">
-	<label for="seat">
-		<g:message code="ticket.seat.label" default="Seat" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="seat" type="number" value="${ticketInstance.seat}" required=""/>
-
-</div>
 
