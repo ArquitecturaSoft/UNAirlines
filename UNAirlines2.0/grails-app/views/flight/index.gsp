@@ -60,7 +60,7 @@
 
                     <td class="text-center">${fieldValue(bean: flightInstance, field: "gate")}</td>
 
-                    <td class="text-center">${fieldValue(bean: flightInstance, field: "number")}</td>
+                    <td class="text-center">${fieldValue(bean: flightInstance, field: "numberFlight")}</td>
                 </tr>
             </g:each>
         </tbody>

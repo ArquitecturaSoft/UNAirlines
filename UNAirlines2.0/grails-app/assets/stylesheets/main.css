@@ -115,7 +115,7 @@ a:focus {
 }
 
 body > section {
-  padding: 70px 0;
+  padding: 10px 0;
 }
 
 .center {
@@ -1343,7 +1343,7 @@ ul.social_icons li  a i{
  }
 
 .team-bar .second-arrow .fa-angle-down {
-  background:#6AA42F;
+  background:#000;
   margin-left: -33px;
 }
 

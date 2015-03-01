@@ -16,7 +16,9 @@
                             <button type="submit" class="btn btn-primary btn-lg">Mis Vuelos</button>
                         </li>
                         <li>
-                            <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
+                             <g:form controller="Flight" action="mainSearch">
+                                <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
+                            </g:form>
                         </li>  
                         <li>
                             <button type="submit" class="btn btn-primary btn-lg">Aerolineas</button>
