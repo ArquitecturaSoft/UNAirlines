@@ -33,10 +33,7 @@
                             <label>Telefono*</label>
                             <input type="text" name="phone" required="" class="form-control" value="${customerInstance?.phone}">
                         </div>
-                        <div class="form-group">
-                            <label>Tiquetes</label>
-                            <g:select name="tickets" from="${unairlines2.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${customerInstance?.tickets*.id}" class="many-to-many"/>
-                        </div>
+                        
                     </div>
             </div><!--/.row-->
         </div><!--/.container-->

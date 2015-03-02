@@ -204,6 +204,7 @@
 	  display: block;
 	  overflow: hidden;
 	  visibility: hidden;
+          margin-left: 10em;
 	  width: 0;
 	  height: 0; }
 	.row:after,

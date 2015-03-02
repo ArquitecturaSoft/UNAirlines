@@ -27,7 +27,7 @@
             </div> <!--skill_border-->    
             <center><h1><a>Buscar Vuelo<a></h1></center>
             <center>
-                <div class="row clearfix">
+                <div class="row clearfix plan1">
                     <div class="col-md-4 col-sm-6">	
                         <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                             <div class="media">

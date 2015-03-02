@@ -38,7 +38,7 @@
                         <input type="text" name="gate" required="" class="form-control" value="${flightInstance?.gate}">
                     </div>
                     <div class="form-group"> 
-                        <label>Numero de Silla*</label>
+                        <label>Numero de Vuelo*</label>
                         <input type="text" name="numberFlight" required="" class="form-control" value="${flightInstance?.numberFlight}">
                     </div> 
                     <div class="form-group"> 
