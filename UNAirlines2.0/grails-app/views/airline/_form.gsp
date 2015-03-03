@@ -23,10 +23,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="form-group">
-                            <label>Vuelos</label>
-                        <g:select name="flights" from="${unairlines2.Flight.list()}" multiple="multiple" optionKey="id" size="5" value="${airlineInstance?.flights*.id}" class="many-to-many"/>
-                    </div>
+                        
                     <div class="form-group">
                         <label>Nombre*</label>
                         <input type="text" name="name" class="form-control"  required="" value="${airlineInstance?.name}">

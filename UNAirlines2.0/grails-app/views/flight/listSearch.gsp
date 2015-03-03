@@ -81,7 +81,7 @@
                                                 <g:if test="${categoryInstance.type == "Bussines Premium"}">
                                                     <td class="text-center">
                                                         <g:link action="showFlight" id="${flightInstance.id}" params="[category: 'Bussines Premium']">
-                                                            <td>${flightInstance.cost * categoryInstance.multiplier}</td>
+                                                            ${flightInstance.cost * categoryInstance.multiplier}
                                                         </g:link>
                                                     </td>
                                                     <g:set var='flag' value='false'/>

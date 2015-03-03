@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label>Over Weight Luggage</label>
-                            <g:message code="flightClass.overWeightLuggage.label" default="Over Weight Luggage" />
+                             <g:checkBox name="overWeightLuggage" value="${flightClassInstance?.overWeightLuggage}" />
                         </div>
                         <div class="form-group">
                             <label>Snacks</label>

@@ -36,7 +36,7 @@
         <g:form url="[resource:flightClassInstance, action:'save']" >
             <fieldset class="form">
                 <div class="center">        
-                    <h2>Creacion de Tiquetes</h2>
+                    <h2>Creacion de Categorias</h2>
                     <p class="lead">Por favor, diligencia la siguiente información.</p>
                 </div>                                  
                 <g:render template="form"/>
@@ -49,7 +49,7 @@
                             <div class="status alert alert-success" style="display: none"></div>
                             <div class="col-sm-5 col-sm-offset-1">                   
                                 <div class="form-group">
-                                    <button type="submit" name="create" class="btn btn-primary btn-lg" required="required"value="${message(code: 'default.button.create.label', default: 'Create')}" >Crear Tiquete</button>
+                                    <button type="submit" name="create" class="btn btn-primary btn-lg" required="required"value="${message(code: 'default.button.create.label', default: 'Create')}" >Crear Categoria</button>
                                 </div>
                             </div>
                             </section></center>
