@@ -46,18 +46,28 @@
                             <li>Ciudad de Destino: <g:fieldValue bean="${flightInstance}" field="destination"/></li>
                             <li>Puerta: <g:fieldValue bean="${flightInstance}" field="gate"/></li>
                             <li>Numero de Vuelo: <g:fieldValue bean="${flightInstance}" field="numberFlight"/></li>
+                            <li>Wifi:<g:checkBox name="wifi" value="${rCategory.wifi}" disabled="tue" />
                             <li class="plan-action">
-                                <a href="" class="btn btn-primary">Action</a>
+                               <button type="submit" class="btn btn-primary btn-lg">comprar</button>
                             </li>
                         </ul>
                     </div>
-            </div>  
-            
-
-                                        
-                    
-                    
-                    
+                    <div class="col-sm-4 plan price-two wow fadeInDown">
+                        <ul>
+                            <li class="heading-two">
+                                <h1>
+                                    ¿Que beneficios tienes con la categoría ${rCategory.type}?
+                                </h1>
+                            </li>
+                            <li>Wifi: <g:checkBox name="wifi" value="${rCategory.wifi}" disabled="tue" />
+                            <li>Tv Individual: <g:checkBox name="wifi" value="${rCategory.individualTv}" disabled="tue" />
+                            <li>Snacks: <g:checkBox name="wifi" value="${rCategory.snacks}" disabled="tue" />
+                            <li>Vip Room: <g:checkBox name="wifi" value="${rCategory.vipRoom}" disabled="tue" />
+                            <li>Over Weight Luggage: <g:checkBox name="wifi" value="${rCategory.overWeightLuggage}" disabled="tue" />
+                            
+                        </ul>
+                    </div>
+            </div>                     
                                   </div>
             </div><!--/pricing-area-->
         </div><!--/container-->

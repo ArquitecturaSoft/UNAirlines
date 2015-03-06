@@ -1682,7 +1682,7 @@ ul.social_icons li  a i{
 
 .plan {
   
-  margin-left: 30em ;
+  margin-left: 10em ;
   margin-bottom: 70px;
   position: relative;
   
@@ -1743,7 +1743,7 @@ ul.social_icons li  a i{
 
 .pricing-area .heading-two, 
 .pricing-area .price-two .plan-action .btn-primary {
-  background:#27AE60;
+  background:#000;
 }
 
 .pricing-area .heading-three,

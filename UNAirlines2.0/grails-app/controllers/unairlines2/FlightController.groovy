@@ -1,7 +1,7 @@
 package unairlines2
 
 
-
+import unairlines2.FlightClass
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -29,10 +29,13 @@ class FlightController {
     
     def showFlight(Flight flightInstance) {
         double multiplier = 0.0
+        FlightClass cat
         for ( category in flightInstance.airline.flightClasses.asList() )
-            if ( category.type == params['category'] )
+            if ( category.type == params['category'] ){
                 multiplier = category.multiplier
-        render (view:"showFlight", model:[flightInstance: flightInstance, multiplier: multiplier])
+                cat = category
+            }
+        render (view:"showFlight", model:[flightInstance: flightInstance, multiplier: multiplier, rCategory:cat])
     }
 
     def index(Integer max) {
