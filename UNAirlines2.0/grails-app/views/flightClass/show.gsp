@@ -2,106 +2,116 @@
 <%@ page import="unairlines2.FlightClass" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'flightClass.label', default: 'FlightClass')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#show-flightClass" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-flightClass" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list flightClass">
-			
-				<g:if test="${flightClassInstance?.airline}">
-				<li class="fieldcontain">
-					<span id="airline-label" class="property-label"><g:message code="flightClass.airline.label" default="Airline" /></span>
-					
-						<span class="property-value" aria-labelledby="airline-label"><g:link controller="airline" action="show" id="${flightClassInstance?.airline?.id}">${flightClassInstance?.airline?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.individualTv}">
-				<li class="fieldcontain">
-					<span id="individualTv-label" class="property-label"><g:message code="flightClass.individualTv.label" default="Individual Tv" /></span>
-					
-						<span class="property-value" aria-labelledby="individualTv-label"><g:formatBoolean boolean="${flightClassInstance?.individualTv}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.multiplier}">
-				<li class="fieldcontain">
-					<span id="multiplier-label" class="property-label"><g:message code="flightClass.multiplier.label" default="Multiplier" /></span>
-					
-						<span class="property-value" aria-labelledby="multiplier-label"><g:fieldValue bean="${flightClassInstance}" field="multiplier"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.overWeightLuggage}">
-				<li class="fieldcontain">
-					<span id="overWeightLuggage-label" class="property-label"><g:message code="flightClass.overWeightLuggage.label" default="Over Weight Luggage" /></span>
-					
-						<span class="property-value" aria-labelledby="overWeightLuggage-label"><g:formatBoolean boolean="${flightClassInstance?.overWeightLuggage}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.snacks}">
-				<li class="fieldcontain">
-					<span id="snacks-label" class="property-label"><g:message code="flightClass.snacks.label" default="Snacks" /></span>
-					
-						<span class="property-value" aria-labelledby="snacks-label"><g:formatBoolean boolean="${flightClassInstance?.snacks}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.type}">
-				<li class="fieldcontain">
-					<span id="type-label" class="property-label"><g:message code="flightClass.type.label" default="Type" /></span>
-					
-						<span class="property-value" aria-labelledby="type-label"><g:fieldValue bean="${flightClassInstance}" field="type"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.vipRoom}">
-				<li class="fieldcontain">
-					<span id="vipRoom-label" class="property-label"><g:message code="flightClass.vipRoom.label" default="Vip Room" /></span>
-					
-						<span class="property-value" aria-labelledby="vipRoom-label"><g:formatBoolean boolean="${flightClassInstance?.vipRoom}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${flightClassInstance?.wifi}">
-				<li class="fieldcontain">
-					<span id="wifi-label" class="property-label"><g:message code="flightClass.wifi.label" default="Wifi" /></span>
-					
-						<span class="property-value" aria-labelledby="wifi-label"><g:formatBoolean boolean="${flightClassInstance?.wifi}" /></span>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			<g:form url="[resource:flightClassInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${flightClassInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-		</div>
-	</body>
-</html>
+    <head>
+    <asset:stylesheet src="bootstrap.min.css" />
+    <asset:stylesheet src="font-awesome.min.css"/>
+    <asset:stylesheet src="animate.min.css"/>
+    <asset:stylesheet src="prettyPhoto.css"/>
+    <asset:stylesheet src="main.css"/>
+    <asset:stylesheet src="responsive.css"/>
+
+    <asset:javascript src="jquery.js" />
+    <asset:javascript src="bootstrap.min.js" />
+    <asset:javascript src="jquery.prettyPhoto.js" />
+    <asset:javascript src="jquery.isotope.min.js" />
+    <asset:javascript src="main.js" />
+    <asset:javascript src="wow.min.js" />
+    <g:set var="entityName" value="${message(code: 'flightClass.label', default: 'FlightClass')}" />
+    <title><g:message code="default.show.label" args="[entityName]" /></title>
+</head>
+<body>
+		<header id="header">
+                     <g:render template="/common/menuA" />
+                </header>
+                <section id="blog" class="container">
+        <div class="center">
+            <h2>Informacion de Categoria</h2>
+        </div>
+        <div class="blog">
+            <div class="row">
+                <aside class="col-md-16">
+                    <div class="widget categories">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="single_comments">
+                                <g:if test="${flightClassInstance?.airline}">	
+                                    <a>Aeorlinea: </a>
+                                    <br>&emsp;&emsp;&emsp;<g:link class="cLink" controller="airline" action="show" id="${flightClassInstance?.airline?.id}">${flightClassInstance?.airline?.name}</g:link>
+                                </g:if>
+                            </div> 
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.individualTv}">
+                                    <a>Tv Individual: </a>
+                                    <g:checkBox name="individualTv" value="${flightClassInstance?.individualTv}" disabled="tue" />
+
+                                </g:if>
+                            </div>
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.overWeightLuggage}">
+                                    <a>Over Weight Luggage: </a>
+                                    <g:checkBox name="overWeightLuggage" value="${flightClassInstance?.overWeightLuggage}" disabled="tue" />
+
+                                </g:if>
+                            </div>
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.snacks}">
+                                    <a>Snacks: </a>
+                                    <g:checkBox name="snacks" value="${flightClassInstance?.snacks}" disabled="tue" />
+
+                                </g:if>
+                            </div>
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.vipRoom}">
+                                    <a>Vip Room: </a>
+                                    <g:checkBox name="vipRoom" value="${flightClassInstance?.vipRoom}" disabled="tue" />
+
+                                </g:if>
+                            </div>
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.wifi}">
+                                    <a>Wifi: </a>
+                                    <g:checkBox name="wifi" value="${flightClassInstance?.wifi}" disabled="tue" />
+
+                                </g:if>
+                            </div>
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.type}">
+                                    <a>Tipo: </a>
+                                    <g:fieldValue bean="${flightClassInstance}" field="type"/>
+                                </g:if>
+                            </div>
+                            <div class="single_comments">
+                                <g:if test="${flightClassInstance?.multiplier}">
+                                    <a>Multiplicador: </a>
+                                    <g:fieldValue bean="${flightClassInstance}" field="multiplier"/>
+                                </g:if>
+                            </div>
+                            <center>
+                                <section id="contact-page">
+                                    <div class="container">
+                                        <div class="row contact-wrap"> 
+                                            <div class="col-sm-5 col-sm-offset-1">                   
+                                                <div class="form-group">
+                                                    <ul class="nav navbar-nav">  
+                                                        <li><g:form  action="edit" resource="${flightClassInstance}">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Editar</button>
+                                                            </g:form>
+                                                        </li>
+                                                        <li>
+                                                            <g:form url="[resource:flightClassInstance, action:'delete']" method="DELETE">
+                                                                <button type="submit" class="btn btn-primary btn-lg"onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Eliminar</button>
+                                                            </g:form>
+                                                        </li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </center>
+                        </div>
+                    </div>        
+                </div>            
+        </div>
+</body>
+</html>							
