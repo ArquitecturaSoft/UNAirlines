@@ -45,17 +45,6 @@
                         <label>Ciudad de Origen*</label>
                         <input type="text" name="origin" required="" class="form-control" value="${flightInstance?.origin}">
                     </div> 
-                    <div class="form-group"> 
-                        <label>Tiquetes</label>
-                        <ul class="one-to-many">
-                            <g:each in="${flightInstance?.tickets?}" var="t">
-                                <li><g:link controller="ticket" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                            <li class="add">
-                                <g:link controller="ticket" action="create" params="['flight.id': flightInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'ticket.label', default: 'Ticket')])}</g:link>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
             </div><!--/.row-->
     </div><!--/.container-->

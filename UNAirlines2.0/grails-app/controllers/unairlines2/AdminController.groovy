@@ -33,7 +33,7 @@ class AdminController {
     
     def logout = {
 		session.invalidate()
-		redirect(url:"/loginAdmin")
+		redirect(uri:"/")
 	}
 
     def index(Integer max) {

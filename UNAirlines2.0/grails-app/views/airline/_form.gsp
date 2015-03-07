@@ -12,17 +12,7 @@
                         <label>Direccion*</label>
                         <input type="text" name="address" class="form-control" required="required" value="${airlineInstance?.address}">
                     </div>
-                    <div class="form-group">
-                        <label>Clase de Vuelo</label>
-                        <ul class="one-to-many">
-                            <g:each in="${airlineInstance?.flightClasses?}" var="f">
-                                <li><g:link controller="flightClass" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                            <li class="add">
-                                <g:link controller="flightClass" action="create" params="['airline.id': airlineInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'flightClass.label', default: 'FlightClass')])}</g:link>
-                                </li>
-                            </ul>
-                        </div>
+                    
                         
                     <div class="form-group">
                         <label>Nombre*</label>

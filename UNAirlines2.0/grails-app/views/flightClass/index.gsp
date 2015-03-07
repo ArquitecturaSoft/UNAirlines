@@ -1,5 +1,6 @@
 
 <%@ page import="unairlines2.FlightClass" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -71,9 +72,13 @@
                 </tbody>
             </table>  
     <br>
-    <g:form controller="flightClass" action="create">
+    
+        <g:form controller="flightClass" action="create">
+        
             <button type="submit" class="btn btn-primary btn-lg">Crear Categoria</button></li>
-        </g:form></center>        
+        
+        </g:form>
+      </center>     
     <br>
     </body>
     </html>

@@ -22,6 +22,7 @@ class PersonController {
             session.nickname = params['email']
             
             if (user.class == Customer.class) {
+                session.isCustomer = true
                 flash.message = user.name
                 redirect(controller:'Customer', action:'show' , id: user.id)
             }

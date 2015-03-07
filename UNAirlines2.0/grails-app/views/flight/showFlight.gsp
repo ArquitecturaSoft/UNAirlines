@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <<meta charset="utf-8">
+        <meta charset="utf-8">
     <asset:stylesheet src="bootstrap.min.css" />
     <asset:stylesheet src="font-awesome.min.css"/>
     <asset:stylesheet src="animate.min.css"/>
