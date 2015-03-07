@@ -175,7 +175,7 @@ class FinalFilters {
         {
             before = {
                 //verificar que el administrador si tenga acceso en el crud
-                if(session.user && !session.isAdmin && !(actionName.equals('mainSearch') || actionName.equals('listSearch') || actionName.equals('doSearch')))
+                if(session.user && !session.isAdmin && !(actionName.equals('mainSearch') || actionName.equals('listSearch') || actionName.equals('doSearch') || actionName.equals('showFlight')))
                 {
                     flash.message = "Usted tiene prohibida esta vista"
                     redirect(controller:'customer', action:'show' , id: session.user.id)
