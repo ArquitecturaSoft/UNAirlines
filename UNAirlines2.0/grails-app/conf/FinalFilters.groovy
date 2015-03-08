@@ -221,29 +221,29 @@ class FinalFilters {
         */
         forbiddenTicket(controller:'ticket', action:'*')
         {
-            before = {
-                if(!session.user)
-                {
-                    flash.message = "Nadie tiene acceso, de momento"
-                    redirect(url:"/")
-                    return false
-                }
-                
-                if(session.user && !session.isAdmin)
-                {
-                    flash.message = "Nadie tiene acceso, de momento"
-                    redirect(url:"/")
-                    return false
-                }
-                
-                if(session.user && session.isAdmin)
-                {
-                    flash.message = "Nadie tiene acceso, de momento"
-                    redirect(url:"/")
-                    return false
-                }
-
-            } 
+//            before = {
+//                if(!session.user)
+//                {
+//                    flash.message = "Nadie tiene acceso, de momento"
+//                    redirect(url:"/")
+//                    return false
+//                }
+//                
+//                if(session.user && !session.isAdmin)
+//                {
+//                    flash.message = "Nadie tiene acceso, de momento"
+//                    redirect(url:"/")
+//                    return false
+//                }
+//                
+//                if(session.user && session.isAdmin)
+//                {
+//                    flash.message = "Nadie tiene acceso, de momento"
+//                    redirect(url:"/")
+//                    return false
+//                }
+//
+//            } 
         }
     }
 }

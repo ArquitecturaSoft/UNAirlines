@@ -10,6 +10,13 @@ class TicketController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def ticketService
+    
+    def handleFormSubmit(){
+        def ticket = ticketService.createTicket(params.code, params.seat, session.user.name, session.user.surname, session.user.email, new Date(), params.price, params.flight)
+        [ticket:ticket]        
+    }
+    
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Ticket.list(params), model:[ticketInstanceCount: Ticket.count()]
