@@ -35,6 +35,27 @@ class FinalFilters {
                     return false
                 }
                 
+                if(session.user && session.isAdmin && actionName.equals('show'))
+                {
+                    String iduser = session?.user?.id
+                    String idparam = params?.id
+                
+                    if(iduser!=idparam)
+                    {
+                        flash.message = "No puede ver el perfil de otro usuario"
+                        redirect(controller:'admin', action:'show' , id: session.user.id)
+                        return false
+                    }
+                }
+                
+                if(session.user && session.isAdmin && actionName.equals('edit'))
+                {
+                    flash.message = "Los administradores solo se pueden editar por debajo"
+                    redirect(controller:'admin', action:'show' , id: session.user.id)
+                    return false
+
+                }
+                
                 if(session.user && session.isAdmin && actionName.equals('login'))
                 {
                     flash.message = "Usted no puede volver a iniciar sesion"
@@ -79,6 +100,32 @@ class FinalFilters {
                     flash.message = "No puede crear con una sesión iniciada"
                     redirect(controller:'customer', action:'show' , id: session.user.id)
                     return false
+                }
+                
+                if(session.user && actionName.equals('show'))
+                {
+                    String iduser = session?.user?.id
+                    String idparam = params?.id
+                
+                    if(iduser!=idparam)
+                    {
+                        flash.message = "No puede ver el perfil de otro usuario"
+                        redirect(ontroller:'customer', action:'show' , id: session.user.id)
+                        return false
+                    }
+                }
+                
+                if(session.user && actionName.equals('edit'))
+                {
+                    String iduser = session?.user?.id
+                    String idparam = params?.id
+                
+                    if(iduser!=idparam)
+                    {
+                        flash.message = "No puede editar el perfil de otro usuario"
+                        redirect(ontroller:'customer', action:'edit' , id: session.user.id)
+                        return false
+                    }
                 }
                 
                 if(session.user && session.isAdmin)
@@ -242,7 +289,7 @@ class FinalFilters {
 //                    redirect(url:"/")
 //                    return false
 //                }
-//
+//        
 //            } 
         }
     }
