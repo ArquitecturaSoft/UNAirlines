@@ -9,12 +9,7 @@
                         <label>Aerolinea*</label>
                         <g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightInstance?.airline?.id}" class="many-to-one"/>  
                     </div>
-                    <div class="form-group">
-
-                        <label>Fecha de Arribo*</label>
-                        <g:datePicker name="arrivalDate" precision="day"  value="${flightInstance?.arrivalDate}"  />
-
-                    </div>
+                    
                     <div class="form-group">
                         <label>Precio *</label>
                         <input type="text" name="cost" class="form-control" value="${fieldValue(bean: flightInstance, field: 'cost')}" required="" >
@@ -24,27 +19,36 @@
                         <g:datePicker name="departureDate" precision="day"  value="${flightInstance?.departureDate}"  />
                     </div>
                     <div class="form-group">
-                        <label>Descripcion*</label>
-                        <input type="text" name="description" class="form-control" required="" value="${flightInstance?.description}">  
-                    </div>                        
-                </div>
-                <div class="col-sm-5">
-                    <div class="form-group">
-                        <label>Destino*</label>                            
-                        <input type="text" name="destination" class="form-control" required="" value="${flightInstance?.destination}" >  
-                    </div>
-                    <div class="form-group"> 
-                        <label>Puerta*</label>
-                        <input type="text" name="gate" required="" class="form-control" value="${flightInstance?.gate}">
+
+                        <label>Fecha de Llegada*</label>
+                        <g:datePicker name="arrivalDate" precision="day"  value="${flightInstance?.arrivalDate}"  />
+
                     </div>
                     <div class="form-group"> 
                         <label>Numero de Vuelo*</label>
                         <input type="text" name="numberFlight" required="" class="form-control" value="${flightInstance?.numberFlight}">
                     </div> 
+                    
+                                       
+                </div>
+                <div class="col-sm-5">
                     <div class="form-group"> 
                         <label>Ciudad de Origen*</label>
                         <input type="text" name="origin" required="" class="form-control" value="${flightInstance?.origin}">
                     </div> 
+                    <div class="form-group">
+                        <label>Ciudad de Destino*</label>                            
+                        <input type="text" name="destination" class="form-control" required="" value="${flightInstance?.destination}" >  
+                    </div>
+                    <div class="form-group"> 
+                        <label>Gate*</label>
+                        <input type="text" name="gate" required="" class="form-control" value="${flightInstance?.gate}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Descripción*</label>
+                        <input type="text" name="description" class="form-control" required="" value="${flightInstance?.description}">  
+                    </div>     
                     </div>
             </div><!--/.row-->
     </div><!--/.container-->

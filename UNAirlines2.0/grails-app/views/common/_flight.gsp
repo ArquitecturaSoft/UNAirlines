@@ -38,15 +38,15 @@
 
                                     <g:sortableColumn property="arrivalDate" title="${message(code: 'flight.arrivalDate.label', default: 'Arrival Date')}" />
 
-                                    <g:sortableColumn property="cost" title="${message(code: 'flight.cost.label', default: 'Cost')}" />
-
                                     <g:sortableColumn property="departureDate" title="${message(code: 'flight.departureDate.label', default: 'Departure Date')}" />
-
-                                    <g:sortableColumn property="description" title="${message(code: 'flight.description.label', default: 'Description')}" />
-
+                                    
                                     <g:sortableColumn property="destination" title="${message(code: 'flight.destination.label', default: 'Destination')}" />
 
+                                    <g:sortableColumn property="cost" title="${message(code: 'flight.cost.label', default: 'Cost')}" />
+
                                     <g:sortableColumn property="gate" title="${message(code: 'flight.gate.label', default: 'Gate')}" />
+
+                                    <g:sortableColumn property="description" title="${message(code: 'flight.description.label', default: 'Description')}" />
 
                                 </tr>
                             </thead>

@@ -41,7 +41,7 @@
                                                 <img class="img-responsive" src="${resource(dir: 'images', file: 'tab1.png')}">
                                             </div>
                                             <div class="media-body">
-                                                Con esta opcion Podras gestionar  (Crear, Actualizar, Eliminar, Visualizar) las aerolineas que ofrecen nuestros servicios y que podran consultar nuestros clientes.<br><br>
+                                                Con esta opción Podras gestionar  (Crear, Actualizar, Eliminar, Visualizar) las aerolineas que ofrecen nuestros servicios y que podran consultar nuestros clientes.<br><br>
                                         <center>Por favor, Elige una Opcion:
                                         <br>
                                         <g:form controller="airline" action="index">

@@ -37,7 +37,7 @@
         <g:form url="[resource:flightInstance, action:'save']" >
             <fieldset class="form">
                 <div class="center">        
-                    <h2>Creacion de Vuelo</h2>
+                    <h2>Creación de Vuelo</h2>
                     <p class="lead">Por favor, diligencia la siguiente información.</p>
                 </div>                                  
                 <g:render template="form"/>

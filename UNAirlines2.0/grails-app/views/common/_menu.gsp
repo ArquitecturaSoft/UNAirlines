@@ -13,6 +13,11 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav"> 
                         <li>
+                            <g:form controller="Customer" action="show">
+                                <button type="submit" class="btn btn-primary btn-lg">Inicio</button>
+                            </g:form>
+                        </li> 
+                        <li>
                             <button type="submit" class="btn btn-primary btn-lg">Mis Vuelos</button>
                         </li>
                         <li>
@@ -27,7 +32,7 @@
                         </li>
                         <li>
                             <g:form controller="Person" action="logout">
-                                <button type="submit" class="btn btn-primary btn-lg">Cerrar Sesion</button>
+                                <button type="submit" class="btn btn-primary btn-lg">Cerrar Sesión</button>
                             </g:form>
                         </li> 
                     </ul>

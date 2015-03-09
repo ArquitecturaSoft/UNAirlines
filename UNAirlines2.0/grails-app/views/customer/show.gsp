@@ -38,15 +38,15 @@
                     <div class="blog-item">
                         <div class="row">
                             <div class="col-sm-10 blog-content">
-                                <h2><a>Instrucciones de Uso de la Aplicacion</a></h2>
-                                <h3>Hola. Te damos la bienvenida. Dentro de nuestra aplicaciÃ³n podras realizar alguna de las siguientes acciones:</h3>
-                                <h4><a>Consultar Informacion de Aerolineas: </a>Si oprimes el boton "Aerolinas", accederÃ¡s a toda la informacion de contacto de las aerolineas.</h4>
+                                <h2><a>Instrucciones de Uso de la Aplicación</a></h2>
+                                <h3>Hola. Te damos la bienvenida. Dentro de nuestra aplicación podrás realizar alguna de las siguientes acciones:</h3>
+                                <h4><a>Consultar Información de Aerolíneas: </a>Si oprimes el boton "Aerolíneas", accederás a toda la información de contacto de las aerolíneas.</h4>
                                 <br>
-                                <h4><a>Buscar Vuelos: </a>Dentro de nuestra aplicacion podras buscar toda la informacion necesaria del vuelo que desees consultar. Para ello, presiona el boton "Buscar".</h4>
+                                <h4><a>Buscar Vuelos: </a>Dentro de nuestra aplicación podras buscar toda la información necesaria del vuelo que desees consultar. Para ello, presiona el botón "Buscar".</h4>
                                 <br>
-                                <h4><a>Hacer compra de Tiquetes en linea: </a>Si deseas reservar tu viaje, con UNAirlines podras hacer compras. Para ello, selecciona El boton "Buscar" y sigue todas las instrucciones.</h4>
+                                <h4><a>Hacer compra de Tiquetes en línea: </a>Si deseas reservar tu viaje, con UNAirlines podras hacer compras. Para ello, selecciona el boton "Buscar" y sigue todas las instrucciones.</h4>
                                 <br>
-                                <h4><a>Consultar tus vuelos: </a>Si oprimes el boton "mis vuelos", podras acceder a una completa informacion de los tiquetes de vuelo que haz comprado.</h4>
+                                <h4><a>Consultar tus vuelos: </a>Si oprimes el boton "mis vuelos", podrás acceder a una lista de los tiquetes de vuelo que has comprado.</h4>
                             </div>
                         </div>    
                     </div><!--/.blog-item-->
