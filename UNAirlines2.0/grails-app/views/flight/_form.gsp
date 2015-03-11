@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label>Fecha de Partida*</label>
-                        <g:datePicker name="departureDate" precision="minute"  value="${flightInstance?.departureDate}"  />
+                        <g:datePicker name="departureDate" precision="day"  value="${flightInstance?.departureDate}"  />
                     </div>
                     <div class="form-group">
 
