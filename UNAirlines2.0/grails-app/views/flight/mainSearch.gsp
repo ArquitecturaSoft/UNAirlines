@@ -41,7 +41,7 @@
                                     <g:select name="destinationCity" value="destinationCity" from="${destinationCities}"/>
                                     <br><br>
                                     <h2>Fecha:</h2>
-                                    <g:datePicker name="departureDate" value="${new Date()}" precision="day" years="${(1900 + new Date().year)..(1900 + new Date().year + 1)}"/>
+                                    <input type=date step=7 min="${new Date()}">
                                     <br>
                         <button type="submit" name="search" class="btn btn-primary btn-lg" value="Buscar" >Buscar</button>                          
                 </g:form>

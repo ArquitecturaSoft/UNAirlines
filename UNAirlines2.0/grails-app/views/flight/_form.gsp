@@ -16,12 +16,12 @@
                     </div>
                     <div class="form-group">
                         <label>Fecha de Partida*</label>
-                        <g:datePicker name="departureDate" precision="day"  value="${flightInstance?.departureDate}"  />
+                        <g:datePicker name="departureDate" precision="minute"  value="${flightInstance?.departureDate}"  />
                     </div>
                     <div class="form-group">
 
                         <label>Fecha de Llegada*</label>
-                        <g:datePicker name="arrivalDate" precision="day"  value="${flightInstance?.arrivalDate}"  />
+                        <g:datePicker name="arrivalDate" precision="minute"  value="${flightInstance?.arrivalDate}"  />
 
                     </div>
                     <div class="form-group"> 

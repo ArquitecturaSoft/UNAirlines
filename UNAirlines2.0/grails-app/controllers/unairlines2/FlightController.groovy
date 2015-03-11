@@ -12,8 +12,20 @@ class FlightController {
     
     def doSearch() {
         
-        def flightsList = Flight.findAllByOriginAndDestinationAndDepartureDate(
+        def flightsListTemp = Flight.findAllByOriginAndDestinationAndDepartureDate(
             params['originCity'], params['destinationCity'], params['departureDate'] )
+        
+        def flightsList = []
+        def year = params['departureDate'].year
+        def month = params['departureDate'].month
+        def day = params['departureDate'].day
+        
+        for ( f in flightsListTemp ) {
+            if ( f.departureDate.year == year )
+                if ( f.departureDate.month == month )
+                    if ( f.departureDate.day == day )
+                        flightsList.add(f)
+        }
 
         render (view:"listSearch", model:[flightsList: flightsList])
     }

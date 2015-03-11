@@ -46,7 +46,7 @@
                             <li>Ciudad de Destino: <g:fieldValue bean="${flightInstance}" field="destination"/></li>
                             <li>Puerta: <g:fieldValue bean="${flightInstance}" field="gate"/></li>
                             <li>Numero de Vuelo: <g:fieldValue bean="${flightInstance}" field="numberFlight"/></li>
-                            <li>Wifi:<g:checkBox name="wifi" value="${rCategory.wifi}" disabled="tue" />
+                            
                             <li class="plan-action">
                                 <g:form controller="ticket" action="create" >
                                     <g:hiddenField name="flightID" value="${flightInstance.id}" />
