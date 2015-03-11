@@ -1,7 +1,7 @@
 <%@ page import="unairlines2.Flight" %>
 <!DOCTYPE html>
 <html>
-    < <head>
+    <head>
         <meta charset="utf-8">
     <asset:stylesheet src="bootstrap.min.css" />
     <asset:stylesheet src="font-awesome.min.css"/>
@@ -16,7 +16,7 @@
     <asset:javascript src="main.js" />
     <asset:javascript src="wow.min.js" />
     <g:set var="entityName" value="${message(code: 'flight.label', default: 'Flight')}" />
-    <title><g:message code="default.edit.label" args="[entityName]" /></title>
+    <title>Busqueda</title>
 </head>
 <body>
     <header id="header">
@@ -41,7 +41,8 @@
                                     <g:select name="destinationCity" value="destinationCity" from="${destinationCities}"/>
                                     <br><br>
                                     <h2>Fecha:</h2>
-                                    <input type=date step=7 min="${new Date()}">
+                                     <g:datePicker name="departureDate" value="${new Date()}" precision="day" years="${(1900 + new Date().year)..(1900 + new Date().year + 1)}"/>
+
                                     <br>
                         <button type="submit" name="search" class="btn btn-primary btn-lg" value="Buscar" >Buscar</button>                          
                 </g:form>
