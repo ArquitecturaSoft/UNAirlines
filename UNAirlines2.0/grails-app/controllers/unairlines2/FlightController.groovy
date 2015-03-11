@@ -12,8 +12,8 @@ class FlightController {
     
     def doSearch() {
         
-        def flightsListTemp = Flight.findAllByOriginAndDestinationAndDepartureDate(
-            params['originCity'], params['destinationCity'], params['departureDate'] )
+        def flightsListTemp = Flight.findAllByOriginAndDestination(
+            params['originCity'], params['destinationCity'] )
         
         def flightsList = []
         def year = params['departureDate'].year
