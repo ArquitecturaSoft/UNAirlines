@@ -42,7 +42,7 @@ class FinalFilters {
                 
                     if(iduser!=idparam)
                     {
-                        flash.message = "No puede ver el perfil de otro usuario"
+                        flash.message = "No puede ver el perfil de otro administrador"
                         redirect(controller:'admin', action:'show' , id: session.user.id)
                         return false
                     }
@@ -228,6 +228,13 @@ class FinalFilters {
                     redirect(controller:'customer', action:'show' , id: session.user.id)
                     return false
                 }
+                
+                if(session.user && session.isAdmin && (actionName.equals('mainSearch') || actionName.equals('listSearch') || actionName.equals('doSearch') || actionName.equals('showFlight')))
+                {
+                    flash.message = "Usted tiene prohibida esta vista"
+                    redirect(controller:'admin', action:'show' , id: session.user.id)
+                    return false
+                }
         
                 if(!session.user)
                 {
@@ -268,30 +275,29 @@ class FinalFilters {
         */
         forbiddenTicket(controller:'ticket', action:'*')
         {
-//            before = {
-//                if(!session.user)
-//                {
-//                    flash.message = "Nadie tiene acceso, de momento"
-//                    redirect(url:"/")
-//                    return false
-//                }
-//                
-//                if(session.user && !session.isAdmin)
-//                {
-//                    flash.message = "Nadie tiene acceso, de momento"
-//                    redirect(url:"/")
-//                    return false
-//                }
-//                
-//                if(session.user && session.isAdmin)
-//                {
-//                    flash.message = "Nadie tiene acceso, de momento"
-//                    redirect(url:"/")
-//                    return false
-//                }
-//        
-//            } 
-        }
+            before = {
+                if(!session.user)
+                {
+                    flash.message = "No tiene acceso"
+                    redirect(url:"/")
+                    return false
+                }
+                
+                if(session.user && session.isAdmin)
+                {
+                    flash.message = "No tiene acceso"
+                    redirect(controller:'admin', action:'show' , id: session.user.id)
+                    return false
+                }
+                
+                if(session.user && !session.isAdmin && (actionName.equals('index') || actionName.equals('edit')))
+                {
+                    flash.message = "No tiene acceso"
+                    redirect(controller:'customer', action:'show' , id: session.user.id)
+                    return false
+                }
+            } 
+        } 
     }
 }
 
