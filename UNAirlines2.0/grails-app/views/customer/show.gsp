@@ -90,19 +90,6 @@
                                         <a>Telefono:</a>
                                         <g:fieldValue bean="${customerInstance}" field="phone"/>
                                     </g:if>
-                                </div>
-                                <div class="single_comments">
-                                    <g:if test="${customerInstance?.tickets}">
-				<li class="fieldcontain">
-					<span id="tickets-label" class="property-label"><g:message code="customer.tickets.label" default="Tickets" /></span>
-					
-						<g:each in="${customerInstance.tickets}" var="t">
-						<span class="property-value" aria-labelledby="tickets-label"><g:link controller="ticket" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-                                </div>
 <center>
                                 <g:form url="[resource:customerInstance, action:'edit']">
                                     <fieldset class="buttons">

@@ -49,7 +49,7 @@
                             <div class="status alert alert-success" style="display: none"></div>
                             <div class="col-sm-5 col-sm-offset-1">                   
                                 <div class="form-group">
-                                    <button type="submit" name="create" class="btn btn-primary btn-lg" required="required"value="${message(code: 'default.button.create.label', default: 'Create')}" >Comprar</button>
+                                    <button type="submit" name="create" class="btn btn-primary btn-lg" required="required"value="${message(code: 'default.button.create.label', default: 'Create')}" >Crear</button>
                                 </div>
                             </div>
                             </section></center>

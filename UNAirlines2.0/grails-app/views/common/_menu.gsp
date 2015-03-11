@@ -17,8 +17,8 @@
                                 <button type="submit" class="btn btn-primary btn-lg">Inicio</button>
                             </g:form>
                         </li> 
-                        <li>
-                            <button type="submit" class="btn btn-primary btn-lg">Mis Vuelos</button>
+                        <li><g:form controller="Ticket" action="myTickets">
+                            <button type="submit" class="btn btn-primary btn-lg">Mis Vuelos</button></g:form>
                         </li>
                         <li>
                              <g:form controller="Flight" action="mainSearch">
