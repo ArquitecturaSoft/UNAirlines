@@ -12,8 +12,8 @@ class Ticket {
     static belongsTo = [flight:Flight]
     
     static constrains = {
-        code (unique:true)
-        seat (min:1)
+        code (unique:true, blank:false)
+        seat (min:1, blank:false)
         passengerName (blank:false)
         passengerLastName (blank:false)
         passengerID (blank:false)

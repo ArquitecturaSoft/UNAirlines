@@ -48,7 +48,13 @@
                             <li>Numero de Vuelo: <g:fieldValue bean="${flightInstance}" field="numberFlight"/></li>
                             <li>Wifi:<g:checkBox name="wifi" value="${rCategory.wifi}" disabled="tue" />
                             <li class="plan-action">
-                               <button type="submit" class="btn btn-primary btn-lg">comprar</button>
+                                <g:form controller="ticket" action="create" >
+                                    <g:hiddenField name="flightID" value="${flightInstance.id}" />
+                                    <g:hiddenField name="categoryID" value="${rCategory.id}" />
+                                    <div class="form-group">
+                                        <button type="submit" name="buy" class="btn btn-primary btn-lg" >Comprar</button>
+                                    </div>
+                                </g:form>
                             </li>
                         </ul>
                     </div>

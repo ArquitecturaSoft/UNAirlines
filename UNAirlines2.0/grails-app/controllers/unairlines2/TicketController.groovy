@@ -1,7 +1,5 @@
 package unairlines2
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -9,25 +7,43 @@ import grails.transaction.Transactional
 class TicketController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
-    def ticketService
-    
-    def handleFormSubmit(){
-        def ticket = ticketService.createTicket(params.code, params.seat, session.user.name, session.user.surname, session.user.email, new Date(), params.price, params.flight)
-        [ticket:ticket]        
-    }
     
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Ticket.list(params), model:[ticketInstanceCount: Ticket.count()]
     }
-
+/*    
+    def myTickets(Customer customerInstance) {
+        respond model:[ticketList: customerInstance.tickets]
+    }
+*/
     def show(Ticket ticketInstance) {
         respond ticketInstance
     }
 
     def create() {
-        respond new Ticket(params)
+    //def create() {
+        def flightInstance = Flight.findById(params['flightID'])
+        def category = FlightClass.findById(params['categoryID'])
+        def availableSeats = []
+        def temp = []
+        for ( int i = 1; i <= 60; i ++ )
+            temp.add(i)
+        def ticketList = flightInstance.tickets.asList()
+        for ( x in ticketList ) {
+            temp[x.seat - 1] = -1
+        }
+        for ( w in temp ) {
+            if ( w > 0 )
+                availableSeats.add(w);
+        }
+        
+        print flightInstance.cost
+        double price = flightInstance.cost * category.multiplier
+        String newCode = flightInstance.departureDate.getDateString().replace('/','')
+        newCode = newCode + flightInstance.numberFlight.toString()
+        
+        respond new Ticket(params), model:[availableSeats: availableSeats, price: price, newCode: newCode, flightID:params['flightID']]
     }
 
     @Transactional
@@ -41,9 +57,13 @@ class TicketController {
             respond ticketInstance.errors, view:'create'
             return
         }
-
+        
+        ticketInstance.code = ticketInstance.code + ticketInstance.seat.toString()
         ticketInstance.save flush:true
-
+        def User = Customer.findByEmail(session.nickname)
+        User.tickets.add(ticketInstance)
+        User.save(flush:true)
+        
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'ticket.label', default: 'Ticket'), ticketInstance.id])
@@ -58,7 +78,7 @@ class TicketController {
     }
 
     @Transactional
-    def update(Ticket ticketInstance) {
+    def update(Ticket ticketInstance) {        
         if (ticketInstance == null) {
             notFound()
             return
