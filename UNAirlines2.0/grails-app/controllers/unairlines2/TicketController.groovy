@@ -12,17 +12,17 @@ class TicketController {
         params.max = Math.min(max ?: 10, 100)
         respond Ticket.list(params), model:[ticketInstanceCount: Ticket.count()]
     }
-/*    
-    def myTickets(Customer customerInstance) {
-        respond model:[ticketList: customerInstance.tickets]
+
+    def myTickets() {
+        def customerInstance = Customer.findByEmail(session.nickname)
+        render (view:"myTickets", model:[ticketInstanceList: customerInstance.tickets])
     }
-*/
+
     def show(Ticket ticketInstance) {
         respond ticketInstance
     }
 
     def create() {
-    //def create() {
         def flightInstance = Flight.findById(params['flightID'])
         def category = FlightClass.findById(params['categoryID'])
         def availableSeats = []
@@ -34,8 +34,11 @@ class TicketController {
             temp[x.seat - 1] = -1
         }
         for ( w in temp ) {
-            if ( w > 0 )
-                availableSeats.add(w);
+            if ( w > 0 ) {
+                if ( category.type == "Economy" && w > 30 ) availableSeats.add(w);
+                else if ( category.type == "Bussines" && w > 10 && w <= 30 ) availableSeats.add(w);
+                else if ( category.type == "Bussines Premium" && w > 30 ) availableSeats.add(w);
+            }
         }
         
         print flightInstance.cost
