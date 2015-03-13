@@ -41,7 +41,7 @@
 	<tbody class="table-hover">  
                     <g:each in="${flightsList}" status="i" var="flightInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                            <td class="text-center"><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "arrivalDate")}</g:link></td>
+                                            <td class="text-center"><g:formatDate date="${flightInstance.arrivalDate}" /></td>
 
                                             <td class="text-center"><g:formatDate date="${flightInstance.departureDate}" /></td>
 

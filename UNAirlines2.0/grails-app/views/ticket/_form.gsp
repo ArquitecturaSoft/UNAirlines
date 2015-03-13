@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label>Precio*</label>
-                        <g:field name="price" value="${price}" required="" disabled="true"/>
+                        <g:field name="price" value="${(int)price}" required="" readonly="readonly"/>
                     </div>
                     <div class="form-group">
                         <label>Silla*</label>

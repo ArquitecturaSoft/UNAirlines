@@ -40,8 +40,7 @@ class TicketController {
                 else if ( category.type == "Bussines Premium" && w > 30 ) availableSeats.add(w);
             }
         }
-        
-        print flightInstance.cost
+
         double price = flightInstance.cost * category.multiplier
         String newCode = flightInstance.departureDate.getDateString().replace('/','')
         newCode = newCode + flightInstance.numberFlight.toString()
