@@ -37,7 +37,7 @@ class TicketController {
             if ( w > 0 ) {
                 if ( category.type == "Economy" && w > 30 ) availableSeats.add(w);
                 else if ( category.type == "Bussines" && w > 10 && w <= 30 ) availableSeats.add(w);
-                else if ( category.type == "Bussines Premium" && w > 30 ) availableSeats.add(w);
+                else if ( category.type == "Bussines Premium" && w <= 10 ) availableSeats.add(w);
             }
         }
 
