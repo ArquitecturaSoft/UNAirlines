@@ -48,7 +48,7 @@
 				<div class="single_comments">
                                     <g:if test="${ticketInstance?.passengerBirthDate}">
                                         <a>Fecha de Nacimiento del Pasajero: </a>
-                                        <g:formatDate date="${ticketInstance?.passengerBirthDate}" />
+                                        <g:formatDate date="${ticketInstance?.passengerBirthDate}" format="yyyy-mm-dd" />
                                     </g:if>
                                 </div>
 				<div class="single_comments">

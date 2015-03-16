@@ -49,7 +49,7 @@
 					
 						<td class="text-center">${fieldValue(bean: ticketInstance, field: "flight.numberFlight")}</td>
 					
-						<td class="text-center"><g:formatDate date="${ticketInstance.passengerBirthDate}" precision="day" /></td>
+						<td class="text-center"><g:formatDate date="${ticketInstance.passengerBirthDate}" format="yyyy-MM-dd" /></td>
 					
 						<td class="text-center">${fieldValue(bean: ticketInstance, field: "passengerID")}</td>
 					

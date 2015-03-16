@@ -40,55 +40,53 @@
                                     </g:if>
                                 </div> 
                                 <div class="single_comments">
-                                    <g:if test="${flightInstance?.arrivalDate}">
-                                        <a>Fecha de Arribo: </a>
-                                        <g:formatDate date="${flightInstance?.arrivalDate}" />
-                                    </g:if>
-                                </div>    
-                                <div class="single_comments">
-                                    <g:if test="${flightInstance?.cost}">
-                                        <a>Fecha de Arribo: </a>
-                                        <g:fieldValue bean="${flightInstance}" field="cost"/>
-                                    </g:if>
-                                </div>  
-                                <div class="single_comments">
-                                    <g:if test="${flightInstance?.departureDate}">
-                                        <a>Fecha de Partida: </a>
-                                        <g:formatDate date="${flightInstance?.departureDate}" />
-                                    </g:if>
-                                </div>  
-                                <div class="single_comments">
-                                    <g:if test="${flightInstance?.departureDate}">
-                                        <a>Descripcion: </a>
-                                        <g:fieldValue bean="${flightInstance}" field="description"/>
-                                    </g:if>
-                                </div>  
-                                <div class="single_comments">
-                                    <g:if test="${flightInstance?.departureDate}">
-                                        <a>Puerta: </a>
-                                        <g:fieldValue bean="${flightInstance}" field="gate"/>
-                                    </g:if>
-                                </div> 
-                                <div class="single_comments">
                                     <g:if test="${flightInstance?.numberFlight}">
                                         <a>Numero de Vuelo: </a>
                                         <g:fieldValue bean="${flightInstance}" field="numberFlight"/>
                                     </g:if>
-                                </div> 
-				<div class="single_comments">
+                                </div>
+                                <div class="single_comments">
                                     <g:if test="${flightInstance?.origin}">
                                         <a>Ciudad de Origen: </a>
                                         <g:fieldValue bean="${flightInstance}" field="origin"/>
                                     </g:if>
                                 </div>
                                 <div class="single_comments">
-                                    <g:if test="${flightInstance?.tickets}">
-                                        <a>Tiquetes: </a>
-                                        <g:each in="${flightInstance.tickets}" var="t">
-                                            <br>&emsp;&emsp;&emsp;<g:link controller="ticket" action="show" id="${t.id}">${t?.code}</g:link>
-                                        </g:each>
+                                    <g:if test="${flightInstance?.destination}">
+                                        <a>Ciudad de Destino: </a>
+                                        <g:fieldValue bean="${flightInstance}" field="destination"/>
                                     </g:if>
                                 </div>
+                                <div class="single_comments">
+                                    <g:if test="${flightInstance?.departureDate}">
+                                        <a>Fecha de Partida: </a>
+                                        <g:formatDate date="${flightInstance?.departureDate}" format="yyyy-mm-dd" />
+                                    </g:if>
+                                </div>
+                                <div class="single_comments">
+                                    <g:if test="${flightInstance?.arrivalDate}">
+                                        <a>Fecha de Arribo: </a>
+                                        <g:formatDate date="${flightInstance?.arrivalDate}" format="yyyy-mm-dd"  />
+                                    </g:if>
+                                </div>
+                                <div class="single_comments">
+                                    <g:if test="${flightInstance?.gate}">
+                                        <a>Puerta: </a>
+                                        <g:fieldValue bean="${flightInstance}" field="gate"/>
+                                    </g:if>
+                                </div>
+                                <div class="single_comments">
+                                    <g:if test="${flightInstance?.description}">
+                                        <a>Descripcion: </a>
+                                        <g:fieldValue bean="${flightInstance}" field="description"/>
+                                    </g:if>
+                                </div>  
+                                <div class="single_comments">
+                                    <g:if test="${flightInstance?.cost}">
+                                        <a>Precio: </a>
+                                        $<g:fieldValue bean="${flightInstance}" field="cost"/>
+                                    </g:if>
+                                </div> 
 	 <center>
                                     <section id="contact-page">
                                         <div class="container">

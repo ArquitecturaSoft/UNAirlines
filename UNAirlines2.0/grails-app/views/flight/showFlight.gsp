@@ -37,7 +37,7 @@
                                         ${flightInstance?.airline?.name}
                                     </g:if>
                                 </h1>
-                                <span>$${flightInstance.cost * multiplier}</span>
+                                <span>$${(long)(flightInstance.cost * multiplier)}</span>
                             </li>
                             <li>Fecha de Partida: <g:formatDate date="${flightInstance?.departureDate}" /></li>
                             <li>Fecha de Arribo: <g:formatDate date="${flightInstance?.arrivalDate}" /></li>
@@ -66,10 +66,10 @@
                                 </h1>
                             </li>
                             <li>Wifi: <g:checkBox name="wifi" value="${rCategory.wifi}" disabled="tue" />
-                            <li>Tv Individual: <g:checkBox name="wifi" value="${rCategory.individualTv}" disabled="tue" />
-                            <li>Snacks: <g:checkBox name="wifi" value="${rCategory.snacks}" disabled="tue" />
-                            <li>Vip Room: <g:checkBox name="wifi" value="${rCategory.vipRoom}" disabled="tue" />
-                            <li>Over Weight Luggage: <g:checkBox name="wifi" value="${rCategory.overWeightLuggage}" disabled="tue" />
+                            <li>Tv Individual: <g:checkBox name="IndividualTv" value="${rCategory.individualTv}" disabled="tue" />
+                            <li>Snacks: <g:checkBox name="snacks" value="${rCategory.snacks}" disabled="tue" />
+                            <li>Vip Room: <g:checkBox name="vipRoom" value="${rCategory.vipRoom}" disabled="tue" />
+                            <li>Over Weight Luggage: <g:checkBox name="verWeightLuggage" value="${rCategory.overWeightLuggage}" disabled="tue" />
                             
                         </ul>
                     </div>

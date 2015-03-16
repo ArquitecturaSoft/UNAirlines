@@ -8,7 +8,7 @@
                     <div class="col-sm-5 col-sm-offset-1">
                        <div class="form-group">
                             <label>Aerolinea*</label>
-                            <g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightClassInstance?.airline?.id}" class="many-to-one"/>
+                            <g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightClassInstance?.airline?.id}" class="many-to-one" optionValue="name"/>
                         </div>
                         <div class="form-group">
                             <label>Tv Individual</label>
@@ -35,7 +35,8 @@
                         </div>
                         <div class="form-group">
                             <label>Tipo</label>
-                            <input type="text" name="type" class="form-control" value="${flightClassInstance?.type}" required="" >
+                            <g:select name="type" from="${["Economy", "Bussines", "Bussines Premium"]}" value="${flightClassInstance?.type}" required=""  />
+                            
                         </div>
                         <div class="form-group">
                             <label>Multiplicador*</label>

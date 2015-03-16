@@ -34,14 +34,14 @@
                 <th class="text-center">Destino</th>
                 <th class="text-center">Economy</th>
                 <th class="text-center">Bussines</th>
-                <th class="text-center">Busssines Premium</th>
+                <th class="text-center">Bussines Premium</th>
                 
             </tr>
         </thead>
 	<tbody class="table-hover">  
                     <g:each in="${flightsList}" status="i" var="flightInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                            <td class="text-center"><g:formatDate date="${flightInstance.arrivalDate}" /></td>
+                                            <td class="text-center"><g:formatDate date="${flightInstance.arrivalDate}"  /></td>
 
                                             <td class="text-center"><g:formatDate date="${flightInstance.departureDate}" /></td>
 
@@ -53,7 +53,7 @@
                                                 <g:if test="${categoryInstance.type == "Economy"}">
                                                     <td class="text-center">
                                                         <g:link action="showFlight" id="${flightInstance.id}"  params="[category: 'Economy']">
-                                                            ${flightInstance.cost * categoryInstance.multiplier}
+                                                            ${(long)(flightInstance.cost * categoryInstance.multiplier)}
                                                         </g:link>
                                                     </td>
                                                     <g:set var='flag' value='false'/>

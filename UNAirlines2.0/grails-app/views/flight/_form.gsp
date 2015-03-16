@@ -7,7 +7,7 @@
                 <div class="col-sm-5 col-sm-offset-1">
                     <div class="form-group">                         
                         <label>Aerolinea*</label>
-                        <g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightInstance?.airline?.id}" class="many-to-one"/>  
+                        <g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightInstance?.airline?.id}"  optionValue="name" class="many-to-one"/>  
                     </div>
                     
                     <div class="form-group">
