@@ -60,9 +60,11 @@
         </g:if>
         <g:hasErrors bean="${customerInstance}">
             <ul class="errors" role="alert">
-                <g:eachError bean="${customerInstance}" var="error">
-                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                    </g:eachError>
+                <!-- <g:eachError bean="${customerInstance}" var="error"> -->
+                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><p>Hay uno o mas campos incorrectos o que no coinciden con el formato. Por favor verifica de nuevo</p></li>
+                    <!--
+                     <g:message error="${error}" />
+                     </g:eachError> -->
             </ul>
         </g:hasErrors>
         <g:form url="[resource:customerInstance, action:'save']" >
