@@ -40,7 +40,30 @@
                     <p class="lead">Por favor, diligencia la siguiente información.</p>
                 </div>
 					<g:render template="form"/>
-				<center>
+                                        
+                 
+		<section id="contact-page">
+    <div class="container">
+        <div class="row contact-wrap"> 
+            <div class="status alert alert-success" style="display: none"></div>
+            <form id="main-contact-form" class="contact-form" name="contact-form" method="post">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <h2>Datos de la Tarjeta de Crédito o Débito</h2>
+                    <div class="form-group">
+                        <label>Numero*</label>
+                            <br>
+                            <input name="numT" type="text" placeholder="Ej. 5555-4444-3333-2222" pattern ="[0-9]{13,16}">
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre del Titular*</label>
+                        <br>
+                            <input name="nameT" type="text">
+                    </div> 
+        </div>
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#contact-page-->	
+    <center>
                 <section id="contact-page">
                     <div class="container">
 
@@ -52,7 +75,11 @@
                                 </div>
                             </div>
                             </section></center>
+                            <div class="form-bg">
+            
+               
 
+    </div><!-- container -->
                         </g:form>
                     </div>
                     </body>
