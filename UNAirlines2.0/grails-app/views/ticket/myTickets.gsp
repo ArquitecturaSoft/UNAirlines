@@ -33,6 +33,7 @@
             <tr>
                 <th class="text-center">Código</th>
                 <th class="text-center">Vuelo</th>
+                <th class="text-center">Fecha de Vuelo</th>
                 <th class="text-center">Fecha de Nacimiento del Pasajero</th>
                 <th class="text-center">Id del Pasajero</th>
                 <th class="text-center">Apellidos del Pasajero</th>
@@ -48,7 +49,7 @@
 						<td class="text-center">${fieldValue(bean: ticketInstance, field: "code")}</td>
 					
 						<td class="text-center">${fieldValue(bean: ticketInstance, field: "flight.numberFlight")}</td>
-					
+                                                <td class="text-center"><g:formatDate date="${ticketInstance.flight.departureDate}" format="yyyy-MM-dd/hh:mm" /></td>
 						<td class="text-center"><g:formatDate date="${ticketInstance.passengerBirthDate}" format="yyyy-MM-dd" /></td>
 					
 						<td class="text-center">${fieldValue(bean: ticketInstance, field: "passengerID")}</td>

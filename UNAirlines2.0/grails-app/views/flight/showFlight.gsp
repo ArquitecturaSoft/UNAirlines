@@ -65,11 +65,11 @@
                                     ¿Que beneficios tienes con la categoría ${rCategory.type}?
                                 </h1>
                             </li>
-                            <li>Wifi: <g:checkBox name="wifi" value="${rCategory.wifi}" disabled="tue" />
-                            <li>Tv Individual: <g:checkBox name="IndividualTv" value="${rCategory.individualTv}" disabled="tue" />
-                            <li>Snacks: <g:checkBox name="snacks" value="${rCategory.snacks}" disabled="tue" />
-                            <li>Vip Room: <g:checkBox name="vipRoom" value="${rCategory.vipRoom}" disabled="tue" />
-                            <li>Over Weight Luggage: <g:checkBox name="verWeightLuggage" value="${rCategory.overWeightLuggage}" disabled="tue" />
+                            <li>Wifi: <g:checkBox name="wifi" value="${rCategory.wifi}" disabled="true" />
+                            <li>Tv Individual: <g:checkBox name="IndividualTv" value="${rCategory.individualTv}" disabled="true" />
+                            <li>Snacks: <g:checkBox name="snacks" value="${rCategory.snacks}" disabled="true" />
+                            <li>Vip Room: <g:checkBox name="vipRoom" value="${rCategory.vipRoom}" disabled="true" />
+                            <li>Over Weight Luggage: <g:checkBox name="verWeightLuggage" value="${rCategory.overWeightLuggage}" disabled="true" />
                             
                         </ul>
                     </div>

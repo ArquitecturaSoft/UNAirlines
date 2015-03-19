@@ -46,7 +46,7 @@
             <g:each in="${flightInstanceList}" status="i" var="flightInstance">
                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                     
-                    <td class="text-center"><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "airline")}</g:link></td>
+                    <td class="text-center"><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "airline.name")}</g:link></td>
                     
                     <td class="text-center">${fieldValue(bean: flightInstance, field: "arrivalDate")}</td>
 

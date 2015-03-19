@@ -30,7 +30,7 @@
             <tr>
                 <th class="text-center">Fecha de Arribo</th>
                 <th class="text-center">Fecha de Partida</th>
-                <th class="text-center">Descripcion</th>
+                <th class="text-center">Descripción</th>
                 <th class="text-center">Destino</th>
                 <th class="text-center">Economy</th>
                 <th class="text-center">Bussines</th>
