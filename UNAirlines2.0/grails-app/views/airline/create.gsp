@@ -36,8 +36,8 @@
         <g:form url="[resource:airlineInstance, action:'save']" >
             <fieldset class="form">
                 <div class="center">        
-                    <h2>Creacion De Aerolinea</h2>
-                    <p class="lead">Por favor, diligencia la siguiente información.</p>
+                    <h2>Creación De Aerolínea</h2>
+                    <p class="lead">Por favor diligencia la siguiente información.</p>
                 </div>
                 <g:render template="form"/>
             </fieldset>

@@ -37,7 +37,7 @@
 				<fieldset class="form">
                                     <div class="center">        
                     <h2>Información de Compra</h2>
-                    <p class="lead">Por favor, diligencia la siguiente información.</p>
+                    <p class="lead">Por favor diligencia la siguiente información.</p>
                 </div>
 					<g:render template="form"/>
                                         
@@ -50,7 +50,7 @@
                 <div class="col-sm-5 col-sm-offset-1">
                     <h2>Datos de la Tarjeta de Crédito o Débito</h2>
                     <div class="form-group">
-                        <label>Numero*</label>
+                        <label>Número*</label>
                             <br>
                             <input name="numT" type="text" placeholder="Ej. 5555-4444-3333-2222" pattern ="[0-9]{13,16}">
                     </div>

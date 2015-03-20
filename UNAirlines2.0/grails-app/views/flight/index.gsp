@@ -32,31 +32,34 @@
     <center><table class="table-fill">
         <thead>
             <tr>
-                <th class="text-center">Aerolinea</th>
-                <th class="text-center">Fecha de Arribo</th>
-                <th class="text-center">Precio</th>
+                <th class="text-center">Aerolínea</th>
                 <th class="text-center">Fecha de Partida</th>
-                <th class="text-center">Descripcion</th>
+                <th class="text-center">Fecha de Llegada</th>
+                <th class="text-center">Ciudad Origen</th>
                 <th class="text-center">Ciudad Destino</th>
-                <th class="text-center">Puerta</th>
-                <th class="text-center">Numero</th>
+                <th class="text-center">Precio</th>            
+                <th class="text-center">Descripción</th>
+                <th class="text-center">Gate</th>
+                <th class="text-center">Número</th>
             </tr>
         </thead>
         <tbody class="table-hover">
             <g:each in="${flightInstanceList}" status="i" var="flightInstance">
                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                     
-                    <td class="text-center"><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "airline.name")}</g:link></td>
+                    <td class="text-center"><g:link action="show" id="${flightInstance.id}">${fieldValue(bean: flightInstance, field: "airline.name")}</g:link></td>                   
                     
-                    <td class="text-center">${fieldValue(bean: flightInstance, field: "arrivalDate")}</td>
-
-                    <td class="text-center">${fieldValue(bean: flightInstance, field: "cost")}</td>
-
                     <td class="text-center"><g:formatDate date="${flightInstance.departureDate}" /></td>
 
-                    <td class="text-center">${fieldValue(bean: flightInstance, field: "description")}</td>
-
+                    <td class="text-center"><g:formatDate date="${flightInstance.arrivalDate}" /></td>
+                    
+                    <td class="text-center">${fieldValue(bean: flightInstance, field: "origin")}</td>
+                    
                     <td class="text-center">${fieldValue(bean: flightInstance, field: "destination")}</td>
+                    
+                    <td class="text-center">${fieldValue(bean: flightInstance, field: "cost")}</td>                    
+
+                    <td class="text-center">${fieldValue(bean: flightInstance, field: "description")}</td>                    
 
                     <td class="text-center">${fieldValue(bean: flightInstance, field: "gate")}</td>
 

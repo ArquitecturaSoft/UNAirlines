@@ -25,7 +25,7 @@
                 </header>
                 <section id="blog" class="container">
         <div class="center">
-            <h2>Informacion de Categoria</h2>
+            <h2>Información de Categoría</h2>
         </div>
         <div class="blog">
             <div class="row">
@@ -35,7 +35,7 @@
                             <div class="col-sm-12">
                                 <div class="single_comments">
                                 <g:if test="${flightClassInstance?.airline}">	
-                                    <a>Aeorlinea: </a>
+                                    <a>Aeorlínea: </a>
                                     <br>&emsp;&emsp;&emsp;<g:link class="cLink" controller="airline" action="show" id="${flightClassInstance?.airline?.id}">${flightClassInstance?.airline?.name}</g:link>
                                 </g:if>
                             </div> 

@@ -25,7 +25,7 @@
                 </header>
                 <section id="blog" class="container">
         <div class="center">
-            <h2>Informacion de Vuelo</h2>
+            <h2>Información del Vuelo</h2>
         </div>
         <div class="blog">
             <div class="row">
@@ -35,13 +35,13 @@
                             <div class="col-sm-12">
                                 <div class="single_comments">
                                    <g:if test="${flightInstance?.airline}">	
-                                        <a>Aeorlinea: </a>
+                                        <a>Aeorlínea: </a>
                                         <br>&emsp;&emsp;&emsp;<g:link class="cLink" controller="airline" action="show" id="${flightInstance?.airline?.id}">${flightInstance?.airline?.name}</g:link></span>
                                     </g:if>
                                 </div> 
                                 <div class="single_comments">
                                     <g:if test="${flightInstance?.numberFlight}">
-                                        <a>Numero de Vuelo: </a>
+                                        <a>Número de Vuelo: </a>
                                         <g:fieldValue bean="${flightInstance}" field="numberFlight"/>
                                     </g:if>
                                 </div>
@@ -65,19 +65,19 @@
                                 </div>
                                 <div class="single_comments">
                                     <g:if test="${flightInstance?.arrivalDate}">
-                                        <a>Fecha de Arribo: </a>
+                                        <a>Fecha de Llegada: </a>
                                         <g:formatDate date="${flightInstance?.arrivalDate}" format="yyyy-mm-dd"  />
                                     </g:if>
                                 </div>
                                 <div class="single_comments">
                                     <g:if test="${flightInstance?.gate}">
-                                        <a>Puerta: </a>
+                                        <a>Gate: </a>
                                         <g:fieldValue bean="${flightInstance}" field="gate"/>
                                     </g:if>
                                 </div>
                                 <div class="single_comments">
                                     <g:if test="${flightInstance?.description}">
-                                        <a>Descripcion: </a>
+                                        <a>Descripción: </a>
                                         <g:fieldValue bean="${flightInstance}" field="description"/>
                                     </g:if>
                                 </div>  

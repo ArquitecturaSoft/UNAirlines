@@ -113,8 +113,8 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Que esperas para registrarte?</h1>
-                                    <h2 class="animation animated-item-2">Llena el formulario de registro y aprovecha los servicios que te ofrecemos en linea..</h2>
+                                    <h1 class="animation animated-item-1">¿Que esperas para registrarte?</h1>
+                                    <h2 class="animation animated-item-2">Llena el formulario de registro y aprovecha los servicios que te ofrecemos en linea.</h2>
 
                                 </div>
                             </div>

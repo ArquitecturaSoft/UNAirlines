@@ -40,12 +40,12 @@
                                 <span>$${(long)(flightInstance.cost * multiplier)}</span>
                             </li>
                             <li>Fecha de Partida: <g:formatDate date="${flightInstance?.departureDate}" /></li>
-                            <li>Fecha de Arribo: <g:formatDate date="${flightInstance?.arrivalDate}" /></li>
-                            <li>Descripcion: <g:fieldValue bean="${flightInstance}" field="description"/></li>
+                            <li>Fecha de Llegada: <g:formatDate date="${flightInstance?.arrivalDate}" /></li>
+                            <li>Descripción: <g:fieldValue bean="${flightInstance}" field="description"/></li>
                             <li>Ciudad de Origen: <g:fieldValue bean="${flightInstance}" field="origin"/></li>
                             <li>Ciudad de Destino: <g:fieldValue bean="${flightInstance}" field="destination"/></li>
-                            <li>Puerta: <g:fieldValue bean="${flightInstance}" field="gate"/></li>
-                            <li>Numero de Vuelo: <g:fieldValue bean="${flightInstance}" field="numberFlight"/></li>
+                            <li>Gate: <g:fieldValue bean="${flightInstance}" field="gate"/></li>
+                            <li>Número de Vuelo: <g:fieldValue bean="${flightInstance}" field="numberFlight"/></li>
                             
                             <li class="plan-action">
                                 <g:form controller="ticket" action="create" >

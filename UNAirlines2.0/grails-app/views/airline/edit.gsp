@@ -38,7 +38,7 @@
         <fieldset class="form">
             <div class="center">  
                 <br>
-                <h2>Editar Informacion De Aerolinea</h2>
+                <h2>Editar Información De Aerolínea</h2>
             </div> 
             <g:render template="form"/>
         </fieldset>

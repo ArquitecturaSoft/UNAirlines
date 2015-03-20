@@ -24,30 +24,36 @@
 		<header id="header">
         <g:render template="/common/menu" />
     </header>
-        <br><center><h1><a>Resultados de la Busqueda</a></h1></center><br>
+        <br><center><h1><a>Resultados de la Búsqueda</a></h1></center><br>
         <center><table class="table-fill">
         <thead>
             <tr>
-                <th class="text-center">Fecha de Arribo</th>
                 <th class="text-center">Fecha de Partida</th>
-                <th class="text-center">Descripción</th>
+                <th class="text-center">Fecha de Llegada</th>               
+                <th class="text-center">Origen</th>
                 <th class="text-center">Destino</th>
+                <th class="text-center">Descripción</th>
                 <th class="text-center">Economy</th>
-                <th class="text-center">Bussines</th>
-                <th class="text-center">Bussines Premium</th>
+                <th class="text-center">Business</th>
+                <th class="text-center">Business Premium</th>
                 
             </tr>
         </thead>
 	<tbody class="table-hover">  
                     <g:each in="${flightsList}" status="i" var="flightInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                            <td class="text-center"><g:formatDate date="${flightInstance.arrivalDate}"  /></td>
-
+                                            
                                             <td class="text-center"><g:formatDate date="${flightInstance.departureDate}" /></td>
+                                            
+                                            <td class="text-center"><g:formatDate date="${flightInstance.arrivalDate}"  /></td>                                            
 
+                                            <td class="text-center">${fieldValue(bean: flightInstance, field: "origin")}</td>
+                                            
+                                            <td class="text-center">${fieldValue(bean: flightInstance, field: "destination")}</td>
+                                            
                                             <td class="text-center">${fieldValue(bean: flightInstance, field: "description")}</td>
 
-                                            <td class="text-center">${fieldValue(bean: flightInstance, field: "destination")}</td>
+                                            
                                             <g:set var='flag' value='true'/>
                                             <g:each in="${flightInstance.airline.flightClasses.asList()}" status="j" var="categoryInstance">
                                                 <g:if test="${categoryInstance.type == "Economy"}">
@@ -62,6 +68,7 @@
                                             <g:if test="${flag == 'true'}">
                                                 <td class="text-center">N/A</td>
                                             </g:if>
+                                            
                                             <g:set var='flag' value='true'/>
                                             <g:each in="${flightInstance.airline.flightClasses.asList()}" status="j" var="categoryInstance">
                                                 <g:if test="${categoryInstance.type == "Bussines"}">
@@ -76,6 +83,7 @@
                                             <g:if test="${flag == 'true'}">
                                                 <td class="text-center">N/A</td>
                                             </g:if>
+                                            
                                             <g:set var='flag' value='true'/>
                                             <g:each in="${flightInstance.airline.flightClasses.asList()}" status="j" var="categoryInstance">
                                                 <g:if test="${categoryInstance.type == "Bussines Premium"}">
@@ -90,6 +98,7 @@
                                             <g:if test="${flag == 'true'}">
                                                 <td class="text-center">N/A</td>
                                             </g:if>
+                                            
 					</tr>
 				</g:each>               
         </tbody>

@@ -30,13 +30,13 @@
                 </g:if>
             </header>
             <div class="table-title">
-                <h3>Lista de Aerolineas</h3><br>
+                <h3>Lista de Aerolíneas</h3><br>
             </div>
             <center><table class="table-fill">
                 <thead>
                     <tr>
-                        <th class="text-center">Direccion</th>
                         <th class="text-center">Nombre</th>
+                        <th class="text-center">Dirección</th>                        
                         <th class="text-center">Telefono</th>
 
                     </tr>
@@ -47,11 +47,11 @@
                             
                             <td class="text-center">
                         
-                        <g:if test="${session.isAdmin == true}"><g:link action="show" id="${airlineInstance.id}">${fieldValue(bean: airlineInstance, field: "address")}</g:link></g:if>
-                        <g:if test="${session.isCustomer == true}">${fieldValue(bean: airlineInstance, field: "address")}</g:if>
+                        <g:if test="${session.isAdmin == true}"><g:link action="show" id="${airlineInstance.id}">${fieldValue(bean: airlineInstance, field: "name")}</g:link></g:if>
+                        <g:if test="${session.isCustomer == true}">${fieldValue(bean: airlineInstance, field: "name")}</g:if>
                             </td>
 
-                            <td class="text-center">${fieldValue(bean: airlineInstance, field: "name")}</td>
+                            <td class="text-center">${fieldValue(bean: airlineInstance, field: "address")}</td>
 
                             <td class="text-center">${fieldValue(bean: airlineInstance, field: "phone")}</td>
 

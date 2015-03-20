@@ -25,7 +25,7 @@
     </header>
     <section id="blog" class="container">
         <div class="center">
-            <h2>Informacion de Aerolinea</h2>
+            <h2>Información de Aerolínea</h2>
         </div>
         <div class="blog">
             <div class="row">
@@ -35,13 +35,13 @@
                             <div class="col-sm-12">
                                 <div class="single_comments">
                                     <g:if test="${airlineInstance?.address}">	
-                                        <a>Direccion: </a>
+                                        <a>Dirección: </a>
                                         <g:fieldValue bean="${airlineInstance}" field="address"/>
                                     </g:if>
                                 </div>
                                 <div class="single_comments">
                                     <g:if test="${airlineInstance?.flightClasses}">
-                                        <a>Categorias: </a>
+                                        <a>Categorías: </a>
                                         <g:each in="${airlineInstance.flightClasses}" var="f">
                                             <br>&emsp;&emsp;&emsp;<g:link class="cLink" controller="flightClass" action="show" id="${f.id}">${f?.type}</g:link>
                                         </g:each>

@@ -26,12 +26,12 @@
                 <g:render template="/common/menuA" />
             </header>
             <div class="table-title">
-                <h3>Lista de Categorias</h3><br>
+                <h3>Lista de Categorías</h3><br>
             </div>
             <center><table class="table-fill">
                 <thead>
                     <tr>
-                        <th class="text-center">Aerolinea</th>
+                        <th class="text-center">Aerolínea</th>
                         <th class="text-center">Tv Individual</th>
                         <th class="text-center">Over Weight Luggage</th>
                         <th class="text-center">Snacks</th>
@@ -75,7 +75,7 @@
     
         <g:form controller="flightClass" action="create">
         
-            <button type="submit" class="btn btn-primary btn-lg">Crear Categoria</button></li>
+            <button type="submit" class="btn btn-primary btn-lg">Crear Categoría</button></li>
         
         </g:form>
       </center>     

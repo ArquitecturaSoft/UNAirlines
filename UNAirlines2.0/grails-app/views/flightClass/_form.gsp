@@ -7,7 +7,7 @@
                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
                     <div class="col-sm-5 col-sm-offset-1">
                        <div class="form-group">
-                            <label>Aerolinea*</label>
+                            <label>Aerolínea*</label>
                             <g:select id="airline" name="airline.id" from="${unairlines2.Airline.list()}" optionKey="id" required="" value="${flightClassInstance?.airline?.id}" class="many-to-one" optionValue="name"/>
                         </div>
                         <div class="form-group">

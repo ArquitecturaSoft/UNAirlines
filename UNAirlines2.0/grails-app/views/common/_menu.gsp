@@ -27,7 +27,7 @@
                         </li>  
                         <li>
                              <g:form controller="Airline" action="index">
-                            <button type="submit" class="btn btn-primary btn-lg">Aerolineas</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Aerolíneas</button>
                             </g:form>
                         </li>
                         <li>

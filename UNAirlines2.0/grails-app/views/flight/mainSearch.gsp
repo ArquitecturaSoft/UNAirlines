@@ -16,7 +16,7 @@
     <asset:javascript src="main.js" />
     <asset:javascript src="wow.min.js" />
     <g:set var="entityName" value="${message(code: 'flight.label', default: 'Flight')}" />
-    <title>Busqueda</title>
+    <title>Búsqueda</title>
 </head>
 <body>
     <header id="header">
