@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/UNAirlines2.0/" />
+<title>CreacionCategoria</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CreacionCategoria</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/UNAirlines2.0/admin/show/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Categorias</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#tab3 &gt; div.media &gt; div.media-body</td>
+	<td>Con esta opcion Podras gestionar (Crear, Actualizar, Eliminar, Visualizar) las distintas categorias de servicios que ofrecen las aerolineas.<br /><br /> Por favor, Elige una Opcion: <br /> Ver Crear</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Creacion de Categorias</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=individualTv</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=overWeightLuggage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=wifi</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=type</td>
+	<td>Economy</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=multiplier</td>
+	<td>1.3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Informacion de Categoria</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

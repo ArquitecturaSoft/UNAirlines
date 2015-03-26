@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/UNAirlines2.0/" />
+<title>VerificacionValoresRegistroUsuario</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">VerificacionValoresRegistroUsuario</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/UNAirlines2.0/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=name</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=surname</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=phone</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=address</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=ul.errors &gt; li</td>
+	<td>La propiedad [name] de la clase [class unairlines2.Customer] no puede ser nulo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='create-customer']/ul/li[2]</td>
+	<td>La propiedad [surname] de la clase [class unairlines2.Customer] no puede ser nulo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='create-customer']/ul/li[3]</td>
+	<td>La propiedad [email] de la clase [class unairlines2.Customer] no puede ser nulo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='create-customer']/ul/li[4]</td>
+	<td>La propiedad [password] de la clase [class unairlines2.Customer] no puede ser nulo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='create-customer']/ul/li[5]</td>
+	<td>La propiedad [address] de la clase [class unairlines2.Customer] no puede ser nulo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='create-customer']/ul/li[6]</td>
+	<td>La propiedad [phone] de la clase [class unairlines2.Customer] no puede ser nulo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=name</td>
+	<td>usuario</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=surname</td>
+	<td>Sincorreo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>asd</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=address</td>
+	<td>Cll 1 carrera 5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=phone</td>
+	<td>1236544</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=ul.errors &gt; li</td>
+	<td>La propiedad [email] de la clase [class unairlines2.Customer] con valor [asd] no es una dirección de correo electrónico válida</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

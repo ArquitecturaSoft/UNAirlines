@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/UNAirlines2.0/" />
+<title>CreacionVuelo</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CreacionVuelo</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/UNAirlines2.0/admin/show/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Vuelos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=cost</td>
+	<td>100000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=description</td>
+	<td>Vuelo estandar</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=destination</td>
+	<td>Cartagena</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=gate</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=numberFlight</td>
+	<td>AV99</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=origin</td>
+	<td>Bogota</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.lead</td>
+	<td>Por favor, diligencia la siguiente información.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Informacion de Vuelo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

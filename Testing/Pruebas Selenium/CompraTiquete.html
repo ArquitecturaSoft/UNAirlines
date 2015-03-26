@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/UNAirlines2.0/" />
+<title>CompraTiquete</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CompraTiquete</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/UNAirlines2.0/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>user@unal.edu.co</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=1300000.0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>Mostrar Flight</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=buy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=passengerID</td>
+	<td>1010123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=passengerLastName</td>
+	<td>Tiquete</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=passengerName</td>
+	<td>Mi primer</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Compra Exitosa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//td[6]</td>
+	<td>Mi primer</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
