@@ -24,6 +24,20 @@
 		
 	</head>
 	<body class="homepage">
+            
+            <p>Backend JBoss: <%=InetAddress.getLocalHost().getCanonicalHostName()%></p> 
+            <p>Session ID: <%=request.getSession().getId()%></p> 
+            <p><%
+                def session = request.getSession();
+                Long counter = (Long) request.session.getAttribute("count");
+                if (counter==null)
+                {
+                    counter=01;
+                }
+                counter++;
+                print "Contador: " + counter;
+                request.session.setAttribute("count", counter);
+              %></p>
 
     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">

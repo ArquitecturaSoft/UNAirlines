@@ -1,5 +1,5 @@
 
-<%@ page import="unairlines.Flight" %>
+<%@ page import="unairlines2.Flight" %>
 <!DOCTYPE html>
 <html>
     <head>
