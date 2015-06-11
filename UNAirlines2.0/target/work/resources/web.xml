@@ -172,6 +172,5 @@
     <error-code>500</error-code>
     <location>/grails-errorhandler</location>
   </error-page>
-    <distributable/>
 
 </web-app>
