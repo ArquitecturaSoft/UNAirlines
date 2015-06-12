@@ -1,6 +1,6 @@
 package unairlines2
 
-class Ticket {
+class Ticket implements Serializable {
 
     String code
     int seat

@@ -1,6 +1,6 @@
 package unairlines2
 
-class Customer extends Person {
+class Customer extends Person implements Serializable{
     
     String phone
     String address

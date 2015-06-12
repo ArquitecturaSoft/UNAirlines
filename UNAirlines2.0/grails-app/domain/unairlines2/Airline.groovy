@@ -1,6 +1,6 @@
 package unairlines2
 
-class Airline {
+class Airline implements Serializable{
     
     String name
     String phone

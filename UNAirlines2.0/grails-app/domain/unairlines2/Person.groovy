@@ -1,6 +1,6 @@
 package unairlines2
 
-class Person {
+class Person implements Serializable{
 
     String name
     String surname

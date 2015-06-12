@@ -1,6 +1,6 @@
 package unairlines2
 
-class FlightClass {
+class FlightClass implements Serializable{
 
     String type
     boolean wifi

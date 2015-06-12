@@ -1,6 +1,6 @@
 package unairlines2
 
-class Flight {
+class Flight implements Serializable{
 
     String numberFlight
     Date departureDate, arrivalDate
