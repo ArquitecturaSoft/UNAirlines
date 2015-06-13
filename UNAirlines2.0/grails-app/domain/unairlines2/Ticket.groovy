@@ -1,7 +1,12 @@
 package unairlines2
 
+import javax.xml.bind.annotation.*
+
+
+@XmlAccessorType(XmlAccessType.NONE)
 class Ticket implements Serializable {
 
+    
     String code
     int seat
     String passengerName
