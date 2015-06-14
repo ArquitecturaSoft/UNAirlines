@@ -20,6 +20,6 @@ class ReservaDeTicketService {
         reserva.passengerBirthDate = passengerBirthDate
         reserva.price = price    
  
-        return "Compra de ticket exitosa\n"+reseva.code+" "+String.valueOf(reseva.seat)+" "+reseva.passengerName+" "+reseva.passengerLastName+" "+reseva.passengerID+" "+String.valueOf(reseva.price)
+        return "Compra de ticket exitosa\n"+reserva.code+" "+String.valueOf(reserva.seat)+" "+reserva.passengerName+" "+reserva.passengerLastName+" "+reserva.passengerID+" "+String.valueOf(reserva.price)
     }
 }
