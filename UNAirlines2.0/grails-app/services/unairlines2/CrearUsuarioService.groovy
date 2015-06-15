@@ -16,6 +16,7 @@ class CrearUsuarioService {
         cliente.password = password
         cliente.phone = phone
         cliente.address = address
+        cliente.save();
         return "Cliente creado exitosamente\n"+" "+ cliente.name+" "+ cliente.surname+" "+ cliente.email+" "+ cliente.password+" "+ cliente.phone+" "+ cliente.address 
     }
 }
