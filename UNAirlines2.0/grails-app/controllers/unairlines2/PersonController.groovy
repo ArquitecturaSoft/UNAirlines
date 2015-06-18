@@ -18,25 +18,43 @@ class PersonController {
 	
 	if (user) {
             
-            session.user = user
-            session.nickname = params['email']
-            
-            if (user.class == Customer.class) {
-                session.isCustomer = true
-                flash.message = user.name
-                redirect(controller:'Customer', action:'show' , id: user.id)
+            if (loginLDAP(params['email'],params['password'])) {
+
+                session.user = user
+                session.nickname = params['email']
+
+                if (user.class == Customer.class) {
+                    session.isCustomer = true
+                    flash.message = user.name
+                    redirect(controller:'Customer', action:'show' , id: user.id)
+                }
+                if (user.class == Admin.class)
+                {
+                    flash.message = "Esta cuenta es de administrador"
+                    session.invalidate()
+                    redirect(url:"/admin/login")
+                }
             }
-            if (user.class == Admin.class)
-            {
-                flash.message = "Esta cuenta es de administrador"
-                session.invalidate()
-                redirect(url:"/admin/login")
+            else {
+                flash.message = "E-mail o clave inexistente en LDAP"
+                redirect(action:"login") 
             }
         }    
         else {
             flash.message = "E-mail o clave incorrecta o no existe usuario"
             redirect(action:"login")
         }
+    }
+    
+    def loginLDAP(String usuario, String pass) {
+        print(usuario)
+        print(pass)
+        Login login = new Login()
+        String mensaje = login.login(usuario, pass)
+        if ( mensaje.equals("Login exitoso"))
+            return true
+        return false
+       
     }
     
     def logout = {
